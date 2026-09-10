@@ -226,7 +226,7 @@ SubSync
 
 ## ☁️ 배포 확인
 
-현재 Backend는 Render에 배포되어 있습니다.
+Backend는 Render에 배포되어 있습니다.
 
 ```
 GET https://subsync-backend-4bmh.onrender.com/health
@@ -234,6 +234,17 @@ GET https://subsync-backend-4bmh.onrender.com/api/v1/dictionary/hover?word=hones
 ```
 
 > `/health`는 프로세스 상태만 확인하므로, 외부 사전·번역·LLM Provider의 정상 여부까지 보장하지는 않습니다.
+
+Frontend는 Streamlit cloud / Chrome Web store에 배포되어 있습니다.
+
+
+-[Dashboard(streamlit)] (https://subsync-dashboard-5xicocfzxxf2lngqm4mj7s.streamlit.app)
+
+-[Frontend(Chrome Extension)] (https://chromewebstore.google.com/detail/subsync/akckibdjhdhehbfjellpgododmcpfphc?authuser=0&hl=ko)
+
+
+> Render 서버가 15분동안 사용이 없을시 서버가 잠드므로, 데이터 안나올시 몇분뒤 새로고침 하시면 됩니다.
+
 
 ---
 
