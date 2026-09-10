@@ -250,10 +250,5 @@ Frontend는 Streamlit cloud / Chrome Web store에 배포되어 있습니다.
 
 
 ## 📚 관련 문서
-
-- [Frontend 설치 가이드](https://github.com/931njhthe-star/subsync-frontend)
-- [Backend API 문서 (Swagger)](https://subsync-backend-4bmh.onrender.com/docs)
-- [Backend DB 문서 / Migration](https://github.com/931njhthe-star/subsync-backend)
-- [Dashboard 사용 안내](https://github.com/931njhthe-star/subsync-dashboard)
 - [Project Dashboard](https://yleeylee.notion.site/Subsync-2102b0d658a68394bc070175f52809d0)
 ---
