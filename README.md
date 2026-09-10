@@ -1,2 +1,332 @@
-# aio-02-p1-team4
-AIO 2기 단위프로제트1-Team4 Subsync 산출물
+# 🎬 SubSync
+
+**YouTube를 보면서 자막, 단어 학습, AI Tutor까지 한 번에**
+
+YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension 기반 영어 학습 서비스
+
+> 프로젝트: 엔코아 멀티 에이전트 AI 오케스트레이션 2기 · Team 4
+
+[🎥 시연 영상](#-시연) · [🧩 Frontend Repo](https://github.com/931njhthe-star/subsync-frontend) · [⚙️ Backend Repo](https://github.com/931njhthe-star/subsync-backend) · [📊 Dashboard Repo](https://github.com/931njhthe-star/subsync-dashboard)
+
+---
+
+## 🚩 목차
+
+1. [프로젝트 소개](#-프로젝트-소개)
+2. [기획 배경](#-기획-배경)
+3. [주요 기능](#-주요-기능)
+4. [AI Video Tutor](#-ai-video-tutor)
+5. [서비스 이용 흐름](#-서비스-이용-흐름)
+6. [시연](#-시연)
+7. [기술 스택](#-기술-스택)
+8. [시스템 아키텍처](#-시스템-아키텍처)
+9. [데이터 구조](#-데이터-구조)
+10. [프로젝트 구성](#-프로젝트-구성)
+11. [로컬 실행 가이드](#-로컬-실행-가이드)
+12. [배포 확인](#-배포-확인)
+13. [보안 및 개인정보](#-보안-및-개인정보)
+14. [팀 소개](#-팀-소개)
+15. [관련 문서](#-관련-문서)
+
+---
+
+## ✨ 프로젝트 소개
+
+**SubSync**는 YouTube 영상을 시청하면서 영어를 학습할 수 있도록 만든 Chrome Extension 기반 영어 학습 서비스입니다.
+
+사용자는 영·한 이중자막과 전체 Script를 확인하며 영상을 시청하고, 모르는 영어 단어를 마우스로 바로 조회하거나 저장할 수 있습니다. 또한 영상의 자막과 현재 재생 시점을 AI가 문맥으로 활용해 사용자가 영상 내용에 대해 질문하고 학습할 수 있는 **Video Tutor**를 제공합니다.
+
+> **한 줄 소개**
+> YouTube 영상 시청의 흐름을 끊지 않고 자막 → 단어 → AI 대화까지 연결하는 영어 학습 서비스
+
+SubSync는 크게 세 개의 시스템으로 구성됩니다.
+
+| 시스템 | 역할 |
+|---|---|
+| **Chrome Extension** | 이중자막, Script, 단어 학습, Video Tutor, 로그인, 학습 설정을 제공하는 사용자 화면 |
+| **FastAPI Backend** | 인증, 단어 조회/저장, Tutor AI 호출, 학습 데이터 저장, 로그 수집, LLM 사용량 관리를 담당하는 REST API |
+| **Streamlit Dashboard** | 사용자 활동, 저장 단어, Tutor 사용량, API 상태 및 LLM 사용량을 분석하는 내부 운영 화면 |
+
+---
+
+## 🧭 기획 배경
+
+YouTube는 영어 학습에 활용할 수 있는 방대한 영상 콘텐츠를 제공하지만, 실제 학습 과정에서는 여러 서비스 사이를 이동해야 하는 문제가 있습니다.
+
+```
+YouTube 시청 → 모르는 단어 발견 → 영상 일시정지 → 사전 검색
+     → 다시 YouTube → 영상 내용 질문 → 별도의 AI 서비스 이용
+```
+
+이 과정이 반복되면 영상 시청과 학습의 흐름이 끊어집니다. SubSync는 이를 하나의 흐름으로 연결하는 것을 목표로 합니다.
+
+```
+YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → Video Tutor → 학습 기록
+```
+
+**목표**
+- YouTube 시청과 영어 학습의 자연스러운 결합
+- 영상에서 바로 모르는 단어 확인 및 개인 단어장 저장
+- 영상 문맥 기반 AI 질의응답
+- 학습 행동 데이터 기록 및 분석
+
+---
+
+## 🌟 주요 기능
+
+| 기능 | 설명 |
+|---|---|
+| **영·한 이중자막** | YouTube 영상의 영어·한국어 자막을 함께 표시하고, 재생 위치에 맞춰 현재 문장을 강조 |
+| **전체 Script** | 영상 전체 자막을 검색하고, 타임스탬프 클릭으로 원하는 시점으로 이동 |
+| **Mouse Hover 단어 조회** | 자막·Script·Tutor 답변 속 영어 단어에 마우스를 올리면 즉시 간단한 뜻 확인 |
+| **단어 상세 조회** | 발음기호, 품사, 정의, 문맥 의미, 관련 표현까지 확인 가능한 상세 정보 |
+| **개인 단어장** | 학습 중 발견한 단어를 저장·관리, 중복 저장은 학습 기록으로 관리 |
+| **Google 로그인** | Supabase Auth 기반 Google OAuth 로그인으로 학습 기록을 계정에 연결 |
+| **Video Tutor** | 현재 영상 문맥을 활용한 AI 질의응답 (아래 상세 설명) |
+| **테마 · 설정** | 다크/화이트/글라스 테마, 폰트, 이중자막·Hover·선제 질문 여부 등 개인화 설정 |
+
+---
+
+## 🤖 AI Video Tutor
+
+SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **현재 보고 있는 YouTube 영상의 문맥을 활용하는 Tutor**를 목표로 합니다.
+
+```
+사용자 질문 + Video ID + 현재 재생 시점 + 영상 Script/Subtitle Context + 사용자 학습 정보
+                              ↓
+                          AI Tutor
+                              ↓
+                     영상 문맥 기반 답변
+```
+
+예를 들어 "여기서 speaker가 왜 이 표현을 사용한 거야?"라고 질문하면, 현재 영상의 자막과 재생 위치를 바탕으로 답변합니다.
+
+**주요 기능**
+- Gemini 기반 질의응답 (영상 자막·재생 시점 문맥 활용)
+- Tutor 대화 이력 저장 및 응답 피드백 기록
+- Tutor 답변 속 영어 단어도 Mouse Interaction으로 조회 가능
+- 선제 질문(Proactive Question) — 영상 흐름에 맞춰 AI가 먼저 질문
+- **LLM Provider Fallback** — Gemini ↔ Groq ↔ stub 순서로 장애·사용량 제한에 대응
+- 자막 속 문장이 Tutor의 시스템 규칙을 바꾸지 못하도록 시스템 지시와 사용자 질문/자막을 구조적으로 분리하여 방어
+
+---
+
+## 🔄 서비스 이용 흐름
+
+1. Chrome Extension 설치
+2. YouTube 영상 접속 및 SubSync 활성화
+3. 영·한 이중자막으로 영상 시청
+4. 모르는 단어 Hover → Click → 저장
+5. Video Tutor에게 영상 내용 질문
+6. 학습 기록 서버 저장
+7. Dashboard에서 데이터 분석
+
+---
+
+## 🎥 시연
+
+> GIF/스크린샷 추가 예정
+
+| Login | Dual Subtitle | Word Hover & Click |
+|---|---|---|
+| _(이미지 예정)_ | _(이미지 예정)_ | _(이미지 예정)_ |
+
+| Script | Video Tutor | Dashboard |
+|---|---|---|
+| _(이미지 예정)_ | _(이미지 예정)_ | _(이미지 예정)_ |
+
+---
+
+## 🛠 기술 스택
+
+**Frontend**
+| 기술 | 용도 |
+|---|---|
+| Chrome Extension (Manifest V3) | YouTube 학습 UI |
+| JavaScript / HTML / CSS | Extension 로직 및 UI |
+| Chrome APIs | Extension 기능 및 인증 연동 |
+
+**Backend**
+| 기술 | 용도 |
+|---|---|
+| Python 3.11+ / FastAPI | REST API |
+| Uvicorn | ASGI Server |
+| Pydantic | API Schema |
+| uv | 패키지 관리 |
+| Pytest | 테스트 |
+
+**AI**
+| 기술 | 용도 |
+|---|---|
+| Google Gemini | Video Tutor |
+| Groq | LLM Fallback |
+| Prompt Engineering / Context Builder | 영상 기반 Tutor 응답 및 자막 문맥 구성 |
+
+**Database / Auth**
+| 기술 | 용도 |
+|---|---|
+| Supabase (PostgreSQL, Auth) | 데이터 저장 및 사용자 인증 |
+| Google OAuth / JWT | 로그인 및 API 인증 |
+
+**Cache / Dashboard / Deployment**
+| 기술 | 용도 |
+|---|---|
+| Redis | 세션 및 단어 조회 캐시 |
+| Streamlit + Pandas | 운영·분석 Dashboard |
+| Render | Backend 배포 |
+| Chrome Web Store | Extension 배포 |
+
+---
+
+## 🏗 시스템 아키텍처
+
+```
+┌───────────────────────────────────────────┐
+│               User Browser                 │
+│                YouTube Page                 │
+│              Chrome Extension               │
+│  ┌──────────────┬─────────┬──────────────┐ │
+│  │Dual Subtitle │ Script  │ Video Tutor  │ │
+│  └──────────────┴─────────┴──────────────┘ │
+└──────────────────────┬──────────────────────┘
+                        │ HTTPS REST API
+                        ▼
+┌───────────────────────────────────────────┐
+│              FastAPI Backend               │
+│   Auth / Dictionary / Words / Tutor / Logs  │
+└───────┬──────────────┬──────────────┬───────┘
+        ▼              ▼              ▼
+  ┌──────────┐   ┌──────────┐  ┌──────────────┐
+  │ Supabase │   │  Redis   │  │ Gemini/Groq  │
+  │ Postgres │   │  Cache   │  │     LLM      │
+  └────┬─────┘   └──────────┘  └──────────────┘
+       ▼
+┌────────────────────┐
+│ Streamlit Dashboard │
+│ User/Word/Tutor/LLM/API Analytics │
+└────────────────────┘
+```
+
+---
+
+## 🗄 데이터 구조
+
+| Table | 역할 |
+|---|---|
+| `users` | 사용자 정보 |
+| `login_history` | 로그인 및 접속 기록 |
+| `saved_words` | 사용자 저장 단어 |
+| `ai_conversations` | Tutor 질문·답변 및 피드백 |
+| `llm_usage` | LLM Provider/Model/Token 사용량 |
+| `api_logs` | API 상태 및 응답시간 로그 |
+
+---
+
+## 📦 프로젝트 구성
+
+SubSync는 기능별로 3개의 Repository로 분리되어 있습니다.
+
+```
+SubSync
+├── subsync-frontend   → Chrome Extension
+├── subsync-backend    → FastAPI REST API
+└── subsync-dashboard  → Streamlit Analytics Dashboard
+```
+
+| Repository | 설명 | 링크 |
+|---|---|---|
+| **subsync-frontend** | Chrome Manifest V3 기반 무빌드 확장 프로그램 | [바로가기](https://github.com/931njhthe-star/subsync-frontend) |
+| **subsync-backend** | FastAPI 기반 REST API 서버 | [바로가기](https://github.com/931njhthe-star/subsync-backend) |
+| **subsync-dashboard** | Streamlit 기반 운영·분석 대시보드 | [바로가기](https://github.com/931njhthe-star/subsync-dashboard) |
+
+---
+
+## 🚀 로컬 실행 가이드
+
+### 1. Backend (FastAPI)
+
+```bash
+uv sync
+cp .env.example .env
+uv run uvicorn app.main:app --reload --port 8000 --env-file .env
+```
+
+- Health: `http://127.0.0.1:8000/health`
+- Swagger UI: `http://127.0.0.1:8000/docs`
+- `LLM_PROVIDER=stub`으로 설정하면 API 키 없이 Tutor 계약을 확인할 수 있습니다.
+
+### 2. Frontend (Chrome Extension)
+
+1. 저장소를 내려받습니다.
+2. `chrome://extensions` → 개발자 모드 ON
+3. **압축해제된 확장 프로그램을 로드** 선택 후 `manifest.json`이 있는 폴더 선택
+4. YouTube 영상 탭 새로고침 → SubSync 패널 표시 확인
+
+기본 API 주소는 `src/services/api_client.js`에서 관리하며, 로컬 백엔드 사용 시 CORS와 `host_permissions`를 함께 확인해야 합니다.
+
+### 3. Dashboard (Streamlit)
+
+```bash
+uv sync
+cp .env.example .env
+
+# FastAPI Dashboard API 모드 (권장)
+export SUBSYNC_DASHBOARD_SOURCE=dashboard_api
+export DASHBOARD_API_URL=http://127.0.0.1:8000
+uv run streamlit run dashboard/app.py
+```
+
+- 백엔드 없이 화면만 확인하려면 `SUBSYNC_DASHBOARD_SOURCE=demo`
+- 접속: `http://localhost:8501`
+
+---
+
+## ☁️ 배포 확인
+
+현재 Backend는 Render에 배포되어 있습니다.
+
+```
+GET https://subsync-backend-4bmh.onrender.com/health
+GET https://subsync-backend-4bmh.onrender.com/api/v1/dictionary/hover?word=honest
+```
+
+> `/health`는 프로세스 상태만 확인하므로, 외부 사전·번역·LLM Provider의 정상 여부까지 보장하지는 않습니다.
+
+---
+
+## 🔒 보안 및 개인정보
+
+- API Key, Secret Key, JWT Secret, Google Client Secret은 Frontend/로그/저장소에 포함하지 않습니다.
+- `service_role`/Supabase secret key는 Backend 서버 환경에만 보관합니다.
+- 사용자 데이터는 Supabase RLS와 서버 측 소유권 검사로 보호합니다.
+- 자세한 처리 목적과 보관·삭제 정책은 각 저장소의 `privacy.html` 및 문서를 참고하세요.
+
+---
+
+## 👥 팀 소개
+
+**프로젝트: 엔코아 멀티 에이전트 AI 오케스트레이션 2기 · Team 4**
+
+| 이름 | 역할 |
+|---|---|
+| - | - |
+| - | - |
+| - | - |
+| - | - |
+
+> 각 팀원의 담당 영역과 GitHub 링크는 Extension 설정 화면의 **About** 섹션에서도 확인할 수 있습니다.
+
+---
+
+## 📚 관련 문서
+
+- [Frontend 설치 가이드](https://github.com/931njhthe-star/subsync-frontend)
+- [Backend API 문서 (Swagger)](https://subsync-backend-4bmh.onrender.com/docs)
+- [Backend DB 문서 / Migration](https://github.com/931njhthe-star/subsync-backend)
+- [Dashboard 사용 안내](https://github.com/931njhthe-star/subsync-dashboard)
+
+---
+
+## 📄 라이선스 및 외부 리소스
+
+프로젝트에 포함된 Gmarket Sans, Google G mark 등 외부 리소스의 사용·저작권 고지는 각 저장소의 `THIRD_PARTY_NOTICES.md`를 확인하세요.
