@@ -98,7 +98,6 @@ YouTube 영상의 영어·한국어 자막을 함께 표시하고, 재생 위치
 Supabase Auth 기반 Google OAuth 로그인으로 학습 기록을 계정에 연결 
 
 **Video Tutor**
-<img width="800" height="1259" alt="ai 튜터" src="https://github.com/user-attachments/assets/1d9d8421-0fdb-4e0a-b640-a1ebc9f31c47" />
 
 현재 영상 문맥을 활용한 AI 질의응답 (아래 상세 설명) 
 
@@ -167,8 +166,7 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 | Chrome APIs | Extension 기능 및 인증 연동 |
 
 **Backend**
-| 기술 | 용도 |<img width="768" height="768" alt="bf3d371e7999ca5e" src="https://github.com/user-attachments/assets/a73975a3-34ec-4f3a-b9eb-9fb19ac3544c" />
-
+| 기술 | 용도 |
 |---|---|
 | Python 3.11+ / FastAPI | REST API |
 | Uvicorn | ASGI Server |
