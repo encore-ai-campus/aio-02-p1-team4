@@ -27,7 +27,7 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 ---
 
 ## ✨ 프로젝트 소개
-<img width="400" height="188" alt="2026-09-10 20-57-17" src="https://github.com/user-attachments/assets/ecd65f9a-6c26-46a6-b6fc-2e388c5a9437" />
+<img width="800" height="188" alt="2026-09-10 20-57-17" src="https://github.com/user-attachments/assets/ecd65f9a-6c26-46a6-b6fc-2e388c5a9437" />
 
 
 **SubSync**는 YouTube 영상을 시청하면서 영어를 학습할 수 있도록 만든 Chrome Extension 기반 영어 학습 서비스입니다.
