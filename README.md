@@ -1,4 +1,5 @@
 # 🎬 SubSync
+<img width="505" height="646" alt="image" src="https://github.com/user-attachments/assets/a3e6c82f-c4ae-4c8a-abd2-676f94b4038e" />
 
 **YouTube를 보면서 자막, 단어 학습, AI Tutor까지 한 번에**
 
@@ -6,7 +7,7 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 
 > 프로젝트: 엔코아 멀티 에이전트 AI 오케스트레이션 2기 · Team 4
 
-[🎥 시연 영상](#-시연) · [🧩 Frontend Repo](https://github.com/931njhthe-star/subsync-frontend) · [⚙️ Backend Repo](https://github.com/931njhthe-star/subsync-backend) · [📊 Dashboard Repo](https://github.com/931njhthe-star/subsync-dashboard)
+3. [주요 기능](#-주요-기능) · [🧩 Frontend Repo](https://github.com/931njhthe-star/subsync-frontend) · [⚙️ Backend Repo](https://github.com/931njhthe-star/subsync-backend) · [📊 Dashboard Repo](https://github.com/931njhthe-star/subsync-dashboard)
 
 ---
 
@@ -17,15 +18,16 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 3. [주요 기능](#-주요-기능)
 4. [AI Video Tutor](#-ai-video-tutor)
 5. [서비스 이용 흐름](#-서비스-이용-흐름)
-6. [시연](#-시연)
-7. [기술 스택](#-기술-스택)
-8. [시스템 아키텍처](#-시스템-아키텍처)
-10. [프로젝트 구성](#-프로젝트-구성)
-11. [관련 문서](#-관련-문서)
+6. [기술 스택](#-기술-스택)
+7. [시스템 아키텍처](#-시스템-아키텍처)
+8. [프로젝트 구성](#-프로젝트-구성)
+9. [관련 문서](#-관련-문서)
 
 ---
 
 ## ✨ 프로젝트 소개
+<img width="400" height="188" alt="2026-09-10 20-57-17" src="https://github.com/user-attachments/assets/ecd65f9a-6c26-46a6-b6fc-2e388c5a9437" />
+
 
 **SubSync**는 YouTube 영상을 시청하면서 영어를 학습할 수 있도록 만든 Chrome Extension 기반 영어 학습 서비스입니다.
 
@@ -69,16 +71,38 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 
 ## 🌟 주요 기능
 
-| 기능 | 설명 |
-|---|---|
-| **영·한 이중자막** | YouTube 영상의 영어·한국어 자막을 함께 표시하고, 재생 위치에 맞춰 현재 문장을 강조 |
-| **전체 Script** | 영상 전체 자막을 검색하고, 타임스탬프 클릭으로 원하는 시점으로 이동 |
-| **Mouse Hover 단어 조회** | 자막·Script·Tutor 답변 속 영어 단어에 마우스를 올리면 즉시 간단한 뜻 확인 |
-| **단어 상세 조회** | 발음기호, 품사, 정의, 문맥 의미, 관련 표현까지 확인 가능한 상세 정보 |
-| **개인 단어장** | 학습 중 발견한 단어를 저장·관리, 중복 저장은 학습 기록으로 관리 |
-| **Google 로그인** | Supabase Auth 기반 Google OAuth 로그인으로 학습 기록을 계정에 연결 |
-| **Video Tutor** | 현재 영상 문맥을 활용한 AI 질의응답 (아래 상세 설명) |
-| **테마 · 설정** | 다크/화이트/글라스 테마, 폰트, 이중자막·Hover·선제 질문 여부 등 개인화 설정 |
+**영·한 이중자막**
+
+YouTube 영상의 영어·한국어 자막을 함께 표시하고, 재생 위치에 맞춰 현재 문장을 강조 
+
+**전체 Script**
+
+영상 전체 자막을 검색하고, 타임스탬프 클릭으로 원하는 시점으로 이동 
+
+**Mouse Hover 단어 조회**
+
+자막·Script·Tutor 답변 속 영어 단어에 마우스를 올리면 즉시 간단한 뜻 확인 
+
+**단어 상세 조회**
+
+발음기호, 품사, 정의, 문맥 의미, 관련 표현까지 확인 가능한 상세 정보 
+
+**개인 단어장**
+
+학습 중 발견한 단어를 저장·관리, 중복 저장은 학습 기록으로 관리 
+
+**Google 로그인**
+
+Supabase Auth 기반 Google OAuth 로그인으로 학습 기록을 계정에 연결 
+
+**Video Tutor**
+<img width="800" height="1259" alt="ai 튜터" src="https://github.com/user-attachments/assets/1d9d8421-0fdb-4e0a-b640-a1ebc9f31c47" />
+
+현재 영상 문맥을 활용한 AI 질의응답 (아래 상세 설명) 
+
+**테마 · 설정**
+
+다크/화이트/글라스 테마, 폰트, 이중자막·Hover·선제 질문 여부 등 개인화 설정 
 
 ---
 
@@ -118,17 +142,16 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 
 ---
 
-## 🎥 시연
+## 🎥 이미지
 
-> GIF/스크린샷 추가 예정
 
 | Login | Dual Subtitle | Word Hover & Click |
 |---|---|---|
-| _(이미지 예정)_ | _(이미지 예정)_ | _(이미지 예정)_ |
+| <img width="660" height="395" alt="스크린샷 2026-09-10 222935" src="https://github.com/user-attachments/assets/91945885-4dd2-4794-b04e-cb8fd5740da6" /> | <img width="972" height="245" alt="스크린샷 2026-09-10 222816" src="https://github.com/user-attachments/assets/d8197261-6471-40b9-97e7-a02f8ff9e60b" /> | <img width="446" height="359" alt="스크린샷 2026-09-10 222858" src="https://github.com/user-attachments/assets/dacd7ecd-4f5a-45e8-8dd2-f1a3622b4cce" /> |
 
 | Script | Video Tutor | Dashboard |
 |---|---|---|
-| _(이미지 예정)_ | _(이미지 예정)_ | _(이미지 예정)_ |
+| <img width="516" height="610" alt="스크린샷 2026-09-10 223024" src="https://github.com/user-attachments/assets/0856d804-7e06-4d5d-9f1f-7530bd178fd3" /> | <img width="505" height="646" alt="스크린샷 2026-09-10 223142" src="https://github.com/user-attachments/assets/f83d73af-2640-4536-83e8-95a97b692013" /> | <img width="1114" height="851" alt="image" src="https://github.com/user-attachments/assets/db24019b-dd33-4aa3-8e35-866f857091be" />  |
 
 ---
 
@@ -142,7 +165,8 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 | Chrome APIs | Extension 기능 및 인증 연동 |
 
 **Backend**
-| 기술 | 용도 |
+| 기술 | 용도 |<img width="768" height="768" alt="bf3d371e7999ca5e" src="https://github.com/user-attachments/assets/a73975a3-34ec-4f3a-b9eb-9fb19ac3544c" />
+
 |---|---|
 | Python 3.11+ / FastAPI | REST API |
 | Uvicorn | ASGI Server |
