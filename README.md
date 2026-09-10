@@ -20,13 +20,8 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 6. [시연](#-시연)
 7. [기술 스택](#-기술-스택)
 8. [시스템 아키텍처](#-시스템-아키텍처)
-9. [데이터 구조](#-데이터-구조)
 10. [프로젝트 구성](#-프로젝트-구성)
-11. [로컬 실행 가이드](#-로컬-실행-가이드)
-12. [배포 확인](#-배포-확인)
-13. [보안 및 개인정보](#-보안-및-개인정보)
-14. [팀 소개](#-팀-소개)
-15. [관련 문서](#-관련-문서)
+11. [관련 문서](#-관련-문서)
 
 ---
 
@@ -209,18 +204,6 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 
 ---
 
-## 🗄 데이터 구조
-
-| Table | 역할 |
-|---|---|
-| `users` | 사용자 정보 |
-| `login_history` | 로그인 및 접속 기록 |
-| `saved_words` | 사용자 저장 단어 |
-| `ai_conversations` | Tutor 질문·답변 및 피드백 |
-| `llm_usage` | LLM Provider/Model/Token 사용량 |
-| `api_logs` | API 상태 및 응답시간 로그 |
-
----
 
 ## 📦 프로젝트 구성
 
@@ -241,46 +224,6 @@ SubSync
 
 ---
 
-## 🚀 로컬 실행 가이드
-
-### 1. Backend (FastAPI)
-
-```bash
-uv sync
-cp .env.example .env
-uv run uvicorn app.main:app --reload --port 8000 --env-file .env
-```
-
-- Health: `http://127.0.0.1:8000/health`
-- Swagger UI: `http://127.0.0.1:8000/docs`
-- `LLM_PROVIDER=stub`으로 설정하면 API 키 없이 Tutor 계약을 확인할 수 있습니다.
-
-### 2. Frontend (Chrome Extension)
-
-1. 저장소를 내려받습니다.
-2. `chrome://extensions` → 개발자 모드 ON
-3. **압축해제된 확장 프로그램을 로드** 선택 후 `manifest.json`이 있는 폴더 선택
-4. YouTube 영상 탭 새로고침 → SubSync 패널 표시 확인
-
-기본 API 주소는 `src/services/api_client.js`에서 관리하며, 로컬 백엔드 사용 시 CORS와 `host_permissions`를 함께 확인해야 합니다.
-
-### 3. Dashboard (Streamlit)
-
-```bash
-uv sync
-cp .env.example .env
-
-# FastAPI Dashboard API 모드 (권장)
-export SUBSYNC_DASHBOARD_SOURCE=dashboard_api
-export DASHBOARD_API_URL=http://127.0.0.1:8000
-uv run streamlit run dashboard/app.py
-```
-
-- 백엔드 없이 화면만 확인하려면 `SUBSYNC_DASHBOARD_SOURCE=demo`
-- 접속: `http://localhost:8501`
-
----
-
 ## ☁️ 배포 확인
 
 현재 Backend는 Render에 배포되어 있습니다.
@@ -294,29 +237,6 @@ GET https://subsync-backend-4bmh.onrender.com/api/v1/dictionary/hover?word=hones
 
 ---
 
-## 🔒 보안 및 개인정보
-
-- API Key, Secret Key, JWT Secret, Google Client Secret은 Frontend/로그/저장소에 포함하지 않습니다.
-- `service_role`/Supabase secret key는 Backend 서버 환경에만 보관합니다.
-- 사용자 데이터는 Supabase RLS와 서버 측 소유권 검사로 보호합니다.
-- 자세한 처리 목적과 보관·삭제 정책은 각 저장소의 `privacy.html` 및 문서를 참고하세요.
-
----
-
-## 👥 팀 소개
-
-**프로젝트: 엔코아 멀티 에이전트 AI 오케스트레이션 2기 · Team 4**
-
-| 이름 | 역할 |
-|---|---|
-| - | - |
-| - | - |
-| - | - |
-| - | - |
-
-> 각 팀원의 담당 영역과 GitHub 링크는 Extension 설정 화면의 **About** 섹션에서도 확인할 수 있습니다.
-
----
 
 ## 📚 관련 문서
 
@@ -324,9 +244,5 @@ GET https://subsync-backend-4bmh.onrender.com/api/v1/dictionary/hover?word=hones
 - [Backend API 문서 (Swagger)](https://subsync-backend-4bmh.onrender.com/docs)
 - [Backend DB 문서 / Migration](https://github.com/931njhthe-star/subsync-backend)
 - [Dashboard 사용 안내](https://github.com/931njhthe-star/subsync-dashboard)
-
+- [Project Dashboard](https://yleeylee.notion.site/Subsync-2102b0d658a68394bc070175f52809d0)
 ---
-
-## 📄 라이선스 및 외부 리소스
-
-프로젝트에 포함된 Gmarket Sans, Google G mark 등 외부 리소스의 사용·저작권 고지는 각 저장소의 `THIRD_PARTY_NOTICES.md`를 확인하세요.
