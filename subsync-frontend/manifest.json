@@ -1,0 +1,84 @@
+{
+  "manifest_version": 3,
+  "name": "SubSync",
+  "version": "1.0.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp3eApwOOJ3Pe6abBy4l8BqA8mzVo/rDUNFtXdC2cDzt60M2Mq/MPsBckR7Yr4RalYV896QoFYySYfav5hjOlEYJdnBYlEMIkC37OYKPJGZR6EeNU3xOcwvwfVo6m9bgr+P++20vR4D0Xig6A0dYMbMCCSoHYvikDFjG5w70lYb8sr+sDU4PErBIbfFarYr0rc4yHwjxeYOK5WbQBUIq9gEtqMuqLhU/eIQVffD3WRMnP4fxPwvc+nI1gc6VYDdbEiCBqUSI7v49QUJXOsdF0s7avHBztRysH0LV68xqfhwg6bgsTDP+tX+FlsoJORcJ8QoRGu2NRwcjKg4CMJjoUBwIDAQAB",
+  "description": "YouTube 영·한 이중자막, 마우스 단어 즉시 학습 및 Gemini Video Tutor 확장 프로그램",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/core/inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": [
+        "src/core/caption_requests.js",
+        "src/core/captions.js",
+        "src/core/player.js",
+        "src/core/icon_assets.js",
+        "src/core/glass_filter.js",
+        "src/services/auth_config.js",
+        "src/services/api_client.js",
+        "src/services/auth_service.js",
+        "src/services/settings_service.js",
+        "src/core/theme.js",
+        "src/core/font.js",
+        "src/services/dict_service.js",
+        "src/services/tutor_service.js",
+        "src/services/learning_history_service.js",
+        "src/services/log_service.js",
+        "src/interactive/drag_controller.js",
+        "src/interactive/resize_controller.js",
+        "src/interactive/tokenizer.js",
+        "src/interactive/hover_tooltip.js",
+        "src/interactive/click_popup.js",
+        "src/interactive/interactive_text.js",
+        "src/components/saved_words_view.js",
+        "src/components/history_view.js",
+        "src/components/settings_view.js",
+        "src/components/subtitle_view.js",
+        "src/components/script_panel.js",
+        "src/components/tutor_chat.js",
+        "src/components/auth_modal.js",
+        "src/components/layout.js",
+        "src/content_main.js"
+      ],
+      "css": [
+        "styles/main.css",
+        "styles/subtitle.css",
+        "styles/script.css",
+        "styles/interactive.css",
+        "styles/tutor.css",
+        "styles/modal.css",
+        "styles/motion.css",
+        "styles/icons.css",
+        "styles/theme.css",
+        "styles/fonts.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["storage", "activeTab", "webRequest", "identity"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "http://localhost:8000/*",
+    "http://127.0.0.1:8000/*",
+    "https://subsync-backend-4bmh.onrender.com/*",
+    "https://api.subsync.xyz/*",
+    "https://*.supabase.co/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/icons/*.svg", "assets/fonts/*.woff"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}

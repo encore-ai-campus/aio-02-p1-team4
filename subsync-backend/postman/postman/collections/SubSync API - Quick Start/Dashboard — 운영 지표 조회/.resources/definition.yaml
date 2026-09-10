@@ -1,0 +1,3 @@
+$kind: collection
+description: 기존 Streamlit 화면을 유지하면서 FastAPI가 Supabase의 llm_usage·api_logs를 집계해 전달합니다. 날짜·사용자·모델·endpoint 필터와 상세 내역·상태 코드 집계를 제공합니다.
+order: 5000

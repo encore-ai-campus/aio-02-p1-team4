@@ -1,0 +1,171 @@
+/* 실시간 이중자막 스타일 (유튜브 영상 위 오버레이 및 사이드바) */
+
+@keyframes subsync-caption-loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 1. YouTube 영상 화면 위 이중자막 오버레이 */
+.subsync-video-caption-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  max-width: 85%;
+  width: max-content;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.subsync-video-caption-overlay.subsync-dragging {
+  cursor: grabbing;
+  transition: none !important;
+}
+
+.subsync-video-caption-overlay.subsync-position-resetting {
+  transition:
+    left 360ms cubic-bezier(0.22, 1.28, 0.36, 1),
+    top 360ms cubic-bezier(0.22, 1.28, 0.36, 1);
+  will-change: left, top;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subsync-video-caption-overlay.subsync-position-resetting {
+    transition: none;
+  }
+}
+
+.subsync-overlay-content {
+  background: rgba(10, 10, 14, 0.78);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.subsync-overlay-en {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.subsync-overlay-en .subsync-word {
+  cursor: pointer;
+  padding: 1px 1px;
+  border-radius: 4px;
+}
+
+.subsync-overlay-en .subsync-word:hover,
+.subsync-overlay-en .subsync-word.subsync-word-hovered {
+  background: var(--subsync-accent, #3f7ff5) !important;
+  color: #ffffff !important;
+}
+
+.subsync-overlay-ko {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--subsync-blue, #3f7ff5);
+  margin-top: 4px;
+  line-height: 1.3;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* 2. 패널 내부 이중자막 박스 */
+.subsync-subtitle-box {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 14px;
+  border-radius: 10px;
+  border-left: 3px solid var(--subsync-accent, #3f7ff5);
+}
+
+
+.subsync-subtitle-box[data-caption-state="loading"],
+.subsync-subtitle-box[data-caption-state="ready"],
+.subsync-subtitle-box[data-caption-state="warning"],
+.subsync-subtitle-box[data-caption-state="error"] {
+  color: var(--subsync-text-muted, #a4b0be);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.subsync-subtitle-box[data-caption-state="loading"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+
+.subsync-subtitle-box[data-caption-state="loading"]::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1NiA1Nic+PGcgZmlsbD0nbm9uZScgc3Ryb2tlPScjOThhMmIzJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS13aWR0aD0nNCc+PHBhdGggZD0nTTI4IDJ2MTInIG9wYWNpdHk9JzAuOTUnIHRyYW5zZm9ybT0ncm90YXRlKDAgMjggMjgpJy8+PHBhdGggZD0nTTI4IDJ2MTInIG9wYWNpdHk9JzAuODgnIHRyYW5zZm9ybT0ncm90YXRlKDMwIDI4IDI4KScvPjxwYXRoIGQ9J00yOCAydjEyJyBvcGFjaXR5PScwLjgwJyB0cmFuc2Zvcm09J3JvdGF0ZSg2MCAyOCAyOCknLz48cGF0aCBkPSdNMjggMnYxMicgb3BhY2l0eT0nMC42OCcgdHJhbnNmb3JtPSdyb3RhdGUoOTAgMjggMjgpJy8+PHBhdGggZD0nTTI4IDJ2MTInIG9wYWNpdHk9JzAuNTYnIHRyYW5zZm9ybT0ncm90YXRlKDEyMCAyOCAyOCknLz48cGF0aCBkPSdNMjggMnYxMicgb3BhY2l0eT0nMC40MicgdHJhbnNmb3JtPSdyb3RhdGUoMTUwIDI4IDI4KScvPjxwYXRoIGQ9J00yOCAydjEyJyBvcGFjaXR5PScwLjMyJyB0cmFuc2Zvcm09J3JvdGF0ZSgxODAgMjggMjgpJy8+PHBhdGggZD0nTTI4IDJ2MTInIG9wYWNpdHk9JzAuMjgnIHRyYW5zZm9ybT0ncm90YXRlKDIxMCAyOCAyOCknLz48cGF0aCBkPSdNMjggMnYxMicgb3BhY2l0eT0nMC4zNicgdHJhbnNmb3JtPSdyb3RhdGUoMjQwIDI4IDI4KScvPjxwYXRoIGQ9J00yOCAydjEyJyBvcGFjaXR5PScwLjUyJyB0cmFuc2Zvcm09J3JvdGF0ZSgyNzAgMjggMjgpJy8+PHBhdGggZD0nTTI4IDJ2MTInIG9wYWNpdHk9JzAuNzAnIHRyYW5zZm9ybT0ncm90YXRlKDMwMCAyOCAyOCknLz48cGF0aCBkPSdNMjggMnYxMicgb3BhY2l0eT0nMC44NicgdHJhbnNmb3JtPSdyb3RhdGUoMzMwIDI4IDI4KScvPjwvZz48L3N2Zz4=") center / contain no-repeat;
+  transform-origin: center;
+  animation: subsync-caption-loading-spin 900ms linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subsync-subtitle-box[data-caption-state="loading"]::before {
+    animation: none;
+  }
+}
+
+.subsync-subtitle-box[data-caption-state="warning"] {
+  border-left-color: #f0ad4e;
+}
+
+.subsync-subtitle-box[data-caption-state="error"] {
+  border-left-color: #ef6b73;
+}
+
+.subsync-sub-learn,
+.subsync-sub-known {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.subsync-sub-learn {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.subsync-sub-known {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--subsync-blue, #3f7ff5);
+  margin-top: 6px;
+}
+
+.subsync-sub-empty {
+  color: #888;
+  font-size: 13px;
+  text-align: center;
+  padding: 12px 0;
+}

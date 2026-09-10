@@ -1,0 +1,211 @@
+/* 메인 패널 하단 인라인 Script 스타일 */
+
+.subsync-script-panel-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  min-height: 180px;
+  max-height: 360px;
+  box-sizing: border-box;
+  margin-top: 14px;
+  background: rgba(18, 18, 22, 0.96);
+  backdrop-filter: blur(14px);
+  color: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.subsync-inline-script-panel {
+  flex: 1 1 auto;
+  min-height: 180px;
+  height: auto;
+  max-height: none;
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed {
+  flex: 0 0 auto;
+  min-height: 0;
+}
+
+.subsync-script-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  touch-action: auto;
+  user-select: auto;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subsync-script-header-title {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.subsync-script-icon {
+  font-size: 16px;
+}
+
+.subsync-script-title-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subsync-script-header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.subsync-script-tool-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #ddd;
+}
+.subsync-script-tool-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.subsync-script-close-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+.subsync-script-close-btn:hover {
+  color: var(--subsync-accent, #3f7ff5);
+}
+
+/* 검색 바 */
+.subsync-script-search-bar {
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.subsync-script-search-bar input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #fff;
+  outline: none;
+}
+.subsync-script-search-bar input:focus {
+  border-color: var(--subsync-accent, #3f7ff5);
+}
+
+/* 스크립트 리스트 */
+.subsync-script-list {
+  flex: 1;
+  min-height: 0;
+  max-height: 2000px;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 1;
+  transition:
+    max-height 260ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    opacity 180ms ease,
+    padding 260ms ease;
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed .subsync-script-list {
+  flex: 0 0 0;
+  max-height: 0;
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed .subsync-script-search-bar {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+}
+
+.subsync-script-row {
+  display: flex;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.15s;
+}
+
+.subsync-script-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.subsync-script-row.active {
+  background: var(--subsync-accent-soft, rgba(63, 127, 245, 0.22));
+  border-color: var(--subsync-accent-border, rgba(63, 127, 245, 0.4));
+}
+
+.subsync-script-time {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--subsync-blue, #3f7ff5);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  height: fit-content;
+  white-space: nowrap;
+}
+.subsync-script-time:hover {
+  background: var(--subsync-blue, #3f7ff5);
+  color: #111;
+}
+
+.subsync-script-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.subsync-script-en {
+  font-size: 13px;
+  color: #f1f2f6;
+  line-height: 1.45;
+}
+
+.subsync-script-ko {
+  font-size: 12px;
+  color: #a4b0be;
+  line-height: 1.35;
+}
+
+.subsync-script-row.active .subsync-script-ko {
+  color: #ced6e0;
+}

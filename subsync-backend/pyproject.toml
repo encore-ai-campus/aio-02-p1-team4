@@ -1,0 +1,21 @@
+[project]
+name = "subsync-backend"
+version = "0.1.0"
+description = "FastAPI backend for the SubSync YouTube English learning service"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "httpx",
+    "python-dotenv>=1.2.3",
+    "redis>=8.1.0",
+    "uvicorn[standard]",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "httpx",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

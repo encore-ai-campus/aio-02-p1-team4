@@ -1,0 +1,233 @@
+/* Hover 툴팁 & Click 상세 팝업 & 단어 토큰 스타일 */
+.subsync-word {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.subsync-word:hover,
+.subsync-word.subsync-word-hovered {
+  background: var(--subsync-accent, #3f7ff5) !important;
+  color: #fff !important;
+}
+
+/* Hover 툴팁 */
+.subsync-hover-tooltip {
+  position: absolute;
+  background: rgba(30, 32, 38, 0.95);
+  backdrop-filter: blur(8px);
+  color: #f1f2f6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  z-index: 100000;
+  pointer-events: auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  min-width: 140px;
+  overscroll-behavior: contain;
+}
+
+.subsync-hover-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 12px;
+}
+
+.subsync-tt-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.subsync-tt-word {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--subsync-accent-text, #66a0ff);
+}
+
+.subsync-tt-mean {
+  font-size: 12px;
+  color: #ced6e0;
+}
+
+.subsync-tt-loading {
+  font-size: 11px;
+  color: #a4b0be;
+}
+
+.subsync-tt-save-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.subsync-tt-save-btn:hover {
+  background: var(--subsync-surface-hover, rgba(255, 255, 255, 0.12));
+}
+
+.subsync-tt-save-btn:disabled {
+  cursor: default;
+}
+
+.subsync-tt-save-btn.subsync-tt-save-saved {
+  opacity: 1;
+  filter: drop-shadow(0 0 4px rgba(255, 200, 60, 0.9));
+}
+
+.subsync-tt-hint {
+  display: block;
+  width: 100%;
+  margin: 3px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 10px;
+  color: var(--subsync-blue, #3f7ff5);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.subsync-tt-hint:hover {
+  color: var(--subsync-blue-hover, #66a0ff);
+  text-decoration: underline;
+}
+
+/* Click 상세 팝업 */
+.subsync-click-popup {
+  position: absolute;
+  width: 300px;
+  background: #242730;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  z-index: 100001;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.subsync-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.subsync-popup-word {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--subsync-accent, #3f7ff5);
+}
+
+.subsync-popup-phonetic {
+  font-size: 12px;
+  color: #a4b0be;
+  margin-left: 4px;
+}
+
+.subsync-popup-save-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--subsync-accent, #3f7ff5);
+  border: none;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.subsync-popup-save-btn:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.subsync-popup-save-btn.subsync-popup-save-saved {
+  background: rgba(255, 213, 74, 0.16);
+  color: #ffd54a;
+  box-shadow: 0 0 10px rgba(255, 213, 74, 0.28);
+}
+
+.subsync-popup-close-btn {
+  flex: 0 0 auto;
+  margin-left: 6px;
+  padding: 0 4px;
+  border: 0;
+  background: transparent;
+  color: #a4b0be;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.subsync-popup-close-btn:hover {
+  color: #fff;
+}
+
+.subsync-popup-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #ffb4bd;
+  font-size: 12px;
+}
+
+.subsync-popup-pos {
+  font-size: 12px;
+  color: #ced6e0;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.subsync-popup-defs {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #f1f2f6;
+}
+
+.subsync-popup-def-item {
+  margin-bottom: 4px;
+}
+
+.subsync-popup-context {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--subsync-blue, #3f7ff5);
+  margin-bottom: 8px;
+}
+
+.subsync-popup-phrases {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 6px;
+  font-size: 11px;
+}
+.subsync-popup-phrases-title {
+  font-weight: 600;
+  color: #a4b0be;
+  margin-bottom: 4px;
+}
+.subsync-popup-phrase-item {
+  margin-bottom: 2px;
+  color: #ced6e0;
+}

@@ -1,0 +1,334 @@
+/* SubSync 오리지널 SVG 아이콘 스타일 */
+.subsync-ui-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  vertical-align: middle;
+  opacity: 0.78;
+  pointer-events: none;
+  user-select: none;
+}
+
+.subsync-auth-google-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  opacity: 1;
+}
+
+.subsync-qb-panel-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  line-height: 0;
+}
+
+.subsync-qb-expand-icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  opacity: 1;
+}
+
+.subsync-header-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+}
+
+.subsync-refresh-icon {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  opacity: 1;
+}
+
+.subsync-header-refresh-btn.subsync-refreshing .subsync-refresh-icon {
+  animation: subsync-refresh-spin 700ms linear infinite;
+}
+
+@keyframes subsync-refresh-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.subsync-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.subsync-nav-btn .subsync-ui-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.subsync-nav-btn.active .subsync-ui-icon {
+  opacity: 1;
+}
+
+.subsync-qb-script,
+.subsync-script-header-title,
+.subsync-tutor-header {
+  display: inline-flex;
+  align-items: center;
+}
+
+.subsync-script-header-title {
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+  line-height: 1;
+}
+
+.subsync-script-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 18px;
+  flex: 0 0 15px;
+  margin: 0;
+  line-height: 0;
+}
+
+.subsync-script-header-icon {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+
+.subsync-script-title-text {
+  display: block;
+  line-height: 18px;
+}
+
+.subsync-qb-script .subsync-ui-icon,
+.subsync-action-btn .subsync-ui-icon,
+.subsync-script-header-icon,
+.subsync-tutor-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.subsync-qb-script .subsync-ui-icon,
+.subsync-action-btn .subsync-ui-icon,
+.subsync-script-header-icon,
+.subsync-tutor-icon {
+  opacity: 0.9;
+}
+
+.subsync-script-panel-header {
+  position: relative;
+  padding-bottom: 26px;
+}
+
+.subsync-script-panel-container .subsync-script-collapse-btn {
+  position: absolute;
+  top: auto;
+  bottom: 4px;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  appearance: none;
+  transform: translateX(-50%);
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed {
+  animation: none;
+  transition:
+    opacity 180ms ease,
+    transform 240ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    visibility 0s linear 240ms,
+    box-shadow 240ms ease,
+    border-color 240ms ease;
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed .subsync-script-list {
+  flex: 0 0 auto;
+  height: 0;
+  box-sizing: border-box;
+  transition:
+    height 260ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    max-height 260ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    opacity 180ms ease,
+    padding 260ms ease;
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed:hover {
+  transform: translateY(0) scale(1);
+  border-color: rgba(216, 216, 218, 0.3);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42);
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed:hover .subsync-script-list {
+  flex: 0 0 auto;
+  height: 16px;
+  max-height: 12px;
+  overflow: hidden;
+  opacity: 0.48;
+  padding: 4px 10px 0;
+  pointer-events: auto;
+  background: rgba(8, 8, 12, 0.42);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed:hover .subsync-script-list::before {
+  content: "";
+  display: block;
+  flex: 0 0 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px 8px 4px 4px;
+  background: rgba(255, 255, 255, 0.055);
+  box-sizing: border-box;
+}
+
+.subsync-script-panel-container.subsync-script-panel-collapsed:hover .subsync-script-list > .subsync-script-row,
+.subsync-script-panel-container.subsync-script-panel-collapsed:hover .subsync-script-list > .subsync-view-empty {
+  visibility: hidden;
+}
+
+.subsync-script-panel-container button.subsync-script-collapse-btn:hover:not(:disabled) {
+  transform: translateX(-50%);
+}
+
+.subsync-script-panel-container button.subsync-script-collapse-btn:active:not(:disabled) {
+  transform: translateX(-50%);
+}
+
+.subsync-script-collapse-btn .subsync-script-collapse-icon {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  opacity: 1;
+  transition: transform 220ms cubic-bezier(0.22, 1.12, 0.36, 1);
+}
+
+.subsync-script-collapse-btn.subsync-script-collapse-collapsed .subsync-script-collapse-icon {
+  transform: rotate(0deg);
+}
+
+.subsync-script-collapse-btn:not(.subsync-script-collapse-collapsed) .subsync-script-collapse-icon {
+  transform: rotate(180deg);
+}
+
+.subsync-script-search-icon {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  opacity: 1;
+}
+
+.subsync-tt-save-icon {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.subsync-tt-save-btn.subsync-tt-save-saved .subsync-tt-save-icon {
+  opacity: 1;
+  filter: drop-shadow(0 0 3px rgba(255, 213, 74, 0.95));
+}
+
+
+.subsync-popup-save-icon {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px 0 0;
+  opacity: 1;
+}
+
+.subsync-popup-save-btn.subsync-popup-save-saved .subsync-popup-save-icon {
+  filter: drop-shadow(0 0 3px rgba(255, 213, 74, 0.95));
+}
+
+@keyframes subsync-save-icon-on {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.68) rotate(-18deg);
+    filter: drop-shadow(0 0 0 rgba(255, 213, 74, 0));
+  }
+  58% {
+    opacity: 1;
+    transform: scale(1.18) rotate(7deg);
+    filter: drop-shadow(0 0 8px rgba(255, 213, 74, 0.95));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 3px rgba(255, 213, 74, 0.95));
+  }
+}
+
+@keyframes subsync-save-icon-off {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 3px rgba(255, 213, 74, 0.95));
+  }
+  52% {
+    opacity: 0.55;
+    transform: scale(0.8) rotate(-8deg);
+    filter: drop-shadow(0 0 0 rgba(255, 213, 74, 0));
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1) rotate(0deg);
+    filter: none;
+  }
+}
+
+.subsync-tt-save-icon.subsync-save-icon-on,
+.subsync-popup-save-icon.subsync-save-icon-on {
+  animation: subsync-save-icon-on 360ms cubic-bezier(0.22, 1.18, 0.36, 1) both;
+}
+
+.subsync-tt-save-icon.subsync-save-icon-off,
+.subsync-popup-save-icon.subsync-save-icon-off {
+  animation: subsync-save-icon-off 280ms cubic-bezier(0.22, 1.12, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subsync-tt-save-icon.subsync-save-icon-on,
+  .subsync-tt-save-icon.subsync-save-icon-off,
+  .subsync-popup-save-icon.subsync-save-icon-on,
+  .subsync-popup-save-icon.subsync-save-icon-off {
+    animation: none;
+  }
+
+  .subsync-script-panel-container.subsync-script-panel-collapsed {
+    transition: none;
+  }
+
+  .subsync-script-panel-container.subsync-script-panel-collapsed .subsync-script-list {
+    transition: none;
+  }
+
+  .subsync-script-panel-container.subsync-script-panel-collapsed:hover .subsync-script-list {
+    transition: none;
+  }
+}

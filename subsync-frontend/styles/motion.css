@@ -1,0 +1,455 @@
+/* SubSync 공통 인터랙션 모션 시스템 */
+
+@keyframes subsync-quickbar-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes subsync-screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes subsync-screen-in-forward {
+  from {
+    opacity: 1;
+    transform: translate3d(100%, 0, 0) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes subsync-screen-in-backward {
+  from {
+    opacity: 1;
+    transform: translate3d(-100%, 0, 0) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes subsync-content-change {
+  from {
+    opacity: 0.45;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subsync-caption-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes subsync-caption-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.97);
+  }
+}
+
+@keyframes subsync-overlay-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes subsync-list-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes subsync-state-pulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  45% {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes subsync-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 첫 등장 */
+.subsync-quick-bar {
+  animation: subsync-quickbar-in 420ms cubic-bezier(0.22, 1.18, 0.36, 1) both;
+  transition: box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.subsync-quick-bar:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.48);
+}
+
+/* 공통 버튼 반응 */
+.subsync-quick-bar button,
+.subsync-container button,
+.subsync-script-panel-container button,
+.subsync-auth-modal-overlay button,
+.subsync-tutor-box button {
+  transition:
+    transform 180ms cubic-bezier(0.22, 1.18, 0.36, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+.subsync-quick-bar button:hover:not(:disabled),
+.subsync-container button:hover:not(:disabled),
+.subsync-script-panel-container button:hover:not(:disabled),
+.subsync-auth-modal-overlay button:hover:not(:disabled),
+.subsync-tutor-box button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.subsync-quick-bar button:active:not(:disabled),
+.subsync-container button:active:not(:disabled),
+.subsync-script-panel-container button:active:not(:disabled),
+.subsync-auth-modal-overlay button:active:not(:disabled),
+.subsync-tutor-box button:active:not(:disabled) {
+  transform: translateY(0) scale(0.96);
+  transition-duration: 90ms;
+}
+
+.subsync-quick-bar button:focus-visible,
+.subsync-container button:focus-visible,
+.subsync-script-panel-container button:focus-visible,
+.subsync-auth-modal-overlay button:focus-visible,
+.subsync-tutor-box button:focus-visible,
+.subsync-container input:focus-visible,
+.subsync-script-panel-container input:focus-visible,
+.subsync-auth-modal-overlay input:focus-visible {
+  outline: 2px solid rgba(112, 161, 255, 0.9);
+  outline-offset: 2px;
+}
+
+.subsync-container input,
+.subsync-script-panel-container input,
+.subsync-auth-modal-overlay input {
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.subsync-container input:focus,
+.subsync-script-panel-container input:focus,
+.subsync-auth-modal-overlay input:focus {
+  box-shadow: 0 0 0 3px rgba(112, 161, 255, 0.14);
+}
+
+.subsync-auth-footer a {
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.subsync-auth-footer a:hover {
+  opacity: 0.78;
+}
+
+.subsync-qb-panel-toggle[aria-expanded="true"] {
+  box-shadow: 0 0 0 2px var(--subsync-accent-soft, rgba(63, 127, 245, 0.22));
+}
+
+.subsync-qb-panel-toggle[aria-expanded="false"] {
+  opacity: 0.78;
+}
+
+/* 상태 변경 */
+.subsync-dot.subsync-state-pulse {
+  animation: subsync-state-pulse 360ms cubic-bezier(0.22, 1.18, 0.36, 1);
+}
+
+.subsync-screen-panel.subsync-screen-entering {
+  animation: subsync-screen-in 300ms cubic-bezier(0.22, 1.12, 0.36, 1) both;
+}
+
+.subsync-screen-panel.subsync-screen-entering.subsync-screen-direction-forward {
+  animation: subsync-screen-in-forward 300ms cubic-bezier(0.22, 1.12, 0.36, 1) both;
+}
+
+.subsync-screen-panel.subsync-screen-entering.subsync-screen-direction-backward {
+  animation: subsync-screen-in-backward 300ms cubic-bezier(0.22, 1.12, 0.36, 1) both;
+}
+
+.subsync-subtitle-box.subsync-content-changing {
+  animation: subsync-content-change 240ms ease-out both;
+}
+
+.subsync-subtitle-box {
+  transition:
+    opacity 180ms ease,
+    transform 240ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    padding 240ms ease;
+}
+
+.subsync-subtitle-box.subsync-subtitle-disabled {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transform: translateY(-4px) scale(0.98);
+  pointer-events: none;
+}
+
+.subsync-overlay-content.subsync-caption-entering {
+  animation: subsync-caption-in 260ms cubic-bezier(0.22, 1.12, 0.36, 1) both;
+}
+
+.subsync-overlay-content.subsync-caption-exiting {
+  animation: subsync-caption-out 180ms ease-in both;
+}
+
+/* 동적으로 추가되는 콘텐츠 */
+.subsync-script-row,
+.subsync-saved-item,
+.subsync-history-item,
+.subsync-msg,
+.subsync-view-loading,
+.subsync-view-empty,
+.subsync-view-error,
+.subsync-settings-card,
+.subsync-tutor-box {
+  animation: subsync-list-item-in 280ms cubic-bezier(0.22, 1.12, 0.36, 1) both;
+}
+
+.subsync-script-row,
+.subsync-saved-item,
+.subsync-history-item {
+  transition:
+    transform 180ms cubic-bezier(0.22, 1.18, 0.36, 1),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.subsync-script-row.subsync-filter-hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0;
+  transform: translateX(8px) scale(0.98);
+  pointer-events: none;
+}
+
+.subsync-script-row:hover,
+.subsync-saved-item:hover,
+.subsync-history-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.subsync-script-row.active {
+  transition:
+    background-color 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+/* Hover 툴팁 */
+.subsync-hover-tooltip {
+  opacity: 0;
+  transform: translateY(4px) scale(0.98);
+  transform-origin: bottom left;
+  transition:
+    opacity 170ms ease,
+    transform 220ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    visibility 0s linear 180ms;
+}
+
+.subsync-hover-tooltip.subsync-tooltip-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.subsync-hover-tooltip.subsync-tooltip-exiting {
+  opacity: 0;
+  transform: translateY(4px) scale(0.98);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Click 상세 팝업 */
+.subsync-click-popup {
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  transform-origin: top left;
+  transition:
+    opacity 190ms ease,
+    transform 240ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    visibility 0s linear 220ms;
+}
+
+.subsync-click-popup.subsync-popup-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.subsync-click-popup.subsync-popup-exiting {
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* 인라인 Script */
+.subsync-script-panel-container {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.97);
+  visibility: hidden;
+  transition:
+    opacity 190ms ease,
+    transform 260ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    visibility 0s linear 260ms;
+}
+
+.subsync-script-panel-container.subsync-script-panel-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  transition:
+    opacity 190ms ease,
+    transform 260ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    visibility 0s linear 0s;
+  animation: subsync-overlay-in 260ms cubic-bezier(0.22, 1.12, 0.36, 1) both;
+}
+
+.subsync-script-panel-container.subsync-script-panel-closing,
+.subsync-script-panel-container.subsync-script-panel-closed {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.97);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.subsync-script-search-bar {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition:
+    max-height 220ms cubic-bezier(0.22, 1.12, 0.36, 1),
+    opacity 160ms ease,
+    padding 220ms ease;
+}
+
+.subsync-script-search-bar.subsync-search-open {
+  max-height: 80px;
+  opacity: 1;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+/* 로그인 모달 */
+.subsync-auth-modal-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 220ms ease,
+    visibility 0s linear 240ms;
+}
+
+.subsync-auth-modal-overlay.subsync-modal-visible {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.subsync-auth-modal-overlay.subsync-modal-visible .subsync-auth-modal {
+  animation: subsync-modal-in 300ms cubic-bezier(0.22, 1.16, 0.36, 1) both;
+}
+
+.subsync-auth-modal-overlay.subsync-modal-exiting {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* 접근성 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .subsync-quick-bar,
+  .subsync-quick-bar *,
+  .subsync-container,
+  .subsync-container *,
+  .subsync-script-panel-container,
+  .subsync-script-panel-container *,
+  .subsync-hover-tooltip,
+  .subsync-hover-tooltip *,
+  .subsync-click-popup,
+  .subsync-click-popup *,
+  .subsync-auth-modal-overlay,
+  .subsync-auth-modal-overlay *,
+  .subsync-tutor-box,
+  .subsync-tutor-box * {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}

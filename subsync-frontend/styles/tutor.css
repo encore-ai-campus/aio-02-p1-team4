@@ -1,0 +1,165 @@
+/* Video Tutor 채팅창 스타일 */
+@keyframes subsync-tutor-thinking-wave {
+  0%,
+  50%,
+  100% {
+    opacity: 0.36;
+    transform: translateY(2px) scale(0.82);
+  }
+
+  25% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1);
+  }
+
+  75% {
+    opacity: 0.28;
+    transform: translateY(4px) scale(0.78);
+  }
+}
+
+.subsync-tutor-box {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.subsync-tutor-header {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--subsync-accent-text, #66a0ff);
+}
+
+.subsync-tutor-messages {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 4px;
+}
+
+.subsync-msg {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.subsync-msg.user {
+  align-self: flex-end;
+  background: var(--subsync-accent, #3f7ff5);
+  color: #fff;
+}
+
+.subsync-msg.tutor {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f1f2f6;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subsync-msg.subsync-msg-thinking {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  min-width: 44px;
+  padding: 10px 12px;
+}
+
+.subsync-tutor-thinking-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 10px;
+}
+
+.subsync-tutor-thinking-dot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.72);
+  animation-name: subsync-tutor-thinking-wave;
+  animation-duration: 980ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.subsync-tutor-thinking-dot:nth-child(1) {
+  animation-delay: -326ms;
+}
+
+.subsync-tutor-thinking-dot:nth-child(2) {
+  animation-delay: -163ms;
+}
+
+.subsync-tutor-thinking-dot:nth-child(3) {
+  animation-delay: 0ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subsync-tutor-box .subsync-tutor-thinking-dot {
+    animation: none;
+    opacity: 0.82;
+    transform: none;
+  }
+}
+
+.subsync-msg-feedback {
+  margin-top: 4px;
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.subsync-fb-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.subsync-fb-btn:hover {
+  opacity: 1;
+}
+.subsync-fb-done {
+  font-size: 10px;
+  color: #2ed573;
+}
+
+.subsync-tutor-input-box {
+  display: flex;
+  gap: 6px;
+}
+
+.subsync-tutor-input-box input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.subsync-tutor-input-box button {
+  background: var(--subsync-accent, #3f7ff5);
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}

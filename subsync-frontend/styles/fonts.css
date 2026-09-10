@@ -1,0 +1,49 @@
+/* Gmarket Sans Medium source: https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff */
+/* Gmarket Sans face is registered by src/core/font.js with chrome.runtime.getURL(). */
+
+body[data-subsync-font="system"] {
+  --subsync-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body[data-subsync-font="gmarket"] {
+  --subsync-font-family: "GMarketSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#subsync-root,
+#subsync-root *,
+#subsync-quick-bar,
+#subsync-quick-bar *,
+.subsync-hover-tooltip,
+.subsync-hover-tooltip *,
+.subsync-click-popup,
+.subsync-click-popup *,
+.subsync-auth-modal-overlay,
+.subsync-auth-modal-overlay * {
+  font-family: var(--subsync-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
+body[data-subsync-font] .subsync-font-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.3;
+}
+
+body[data-subsync-font] .subsync-font-option > span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+body[data-subsync-font] .subsync-font-option small {
+  color: var(--subsync-text-muted);
+  font-size: 10px;
+}
+
+body[data-subsync-font] .subsync-font-system strong {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body[data-subsync-font] .subsync-font-gmarket strong {
+  font-family: "GMarketSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}

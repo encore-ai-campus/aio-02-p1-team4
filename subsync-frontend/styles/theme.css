@@ -1,0 +1,929 @@
+/* SubSync 테마 토큰 및 확장 UI 전용 색상 오버라이드 */
+body[data-subsync-theme="dark"] {
+  --subsync-panel-bg: rgba(18, 18, 22, 0.96);
+  --subsync-panel-text: #ffffff;
+  --subsync-panel-border: rgba(255, 255, 255, 0.12);
+  --subsync-divider: rgba(255, 255, 255, 0.14);
+  --subsync-panel-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --subsync-bar-bg: rgba(20, 20, 24, 0.9);
+  --subsync-surface: rgba(255, 255, 255, 0.04);
+  --subsync-surface-strong: rgba(255, 255, 255, 0.08);
+  --subsync-surface-hover: rgba(255, 255, 255, 0.16);
+  --subsync-inset: rgba(0, 0, 0, 0.3);
+  --subsync-input-bg: rgba(255, 255, 255, 0.08);
+  --subsync-text: #ffffff;
+  --subsync-text-strong: #f1f2f6;
+  --subsync-text-secondary: #ced6e0;
+  --subsync-text-muted: #a4b0be;
+  --subsync-text-subtle: #747d8c;
+  --subsync-text-dim: #dddddd;
+  --subsync-accent: #3f7ff5;
+  --subsync-accent-text: #66a0ff;
+  --subsync-accent-soft: rgba(63, 127, 245, 0.22);
+  --subsync-blue: #3f7ff5;
+  --subsync-blue-hover: #66a0ff;
+  --subsync-success: #2ed573;
+  --subsync-error: #ffb4bd;
+  --subsync-overlay-bg: rgba(10, 10, 14, 0.78);
+  --subsync-tooltip-bg: rgba(30, 32, 38, 0.95);
+  --subsync-popup-bg: #242730;
+  --subsync-modal-bg: #1e2026;
+  --subsync-modal-backdrop: rgba(0, 0, 0, 0.65);
+  --subsync-focus: rgba(102, 160, 255, 0.9);
+  --subsync-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --subsync-shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --subsync-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  --subsync-peek-bg: rgba(8, 8, 12, 0.42);
+  --subsync-peek-surface: rgba(255, 255, 255, 0.055);
+  --subsync-peek-border: rgba(255, 255, 255, 0.08);
+}
+
+body[data-subsync-theme="light"] {
+  --subsync-panel-bg: rgba(255, 255, 255, 0.65);
+  --subsync-panel-text: #1f2937;
+  --subsync-panel-border: rgba(15, 23, 42, 0.14);
+  --subsync-divider: rgba(15, 23, 42, 0.12);
+  --subsync-panel-shadow: 0 16px 48px rgba(15, 23, 42, 0.18);
+  --subsync-bar-bg: rgba(255, 255, 255, 0.94);
+  --subsync-surface: rgba(15, 23, 42, 0.045);
+  --subsync-surface-strong: rgba(15, 23, 42, 0.08);
+  --subsync-surface-hover: rgba(15, 23, 42, 0.12);
+  --subsync-inset: rgba(15, 23, 42, 0.045);
+  --subsync-input-bg: rgba(255, 255, 255, 0.96);
+  --subsync-text: #1f2937;
+  --subsync-text-strong: #111827;
+  --subsync-text-secondary: #475467;
+  --subsync-text-muted: #667085;
+  --subsync-text-subtle: #98a2b3;
+  --subsync-text-dim: #344054;
+  --subsync-accent: #3f7ff5;
+  --subsync-accent-text: #2867d9;
+  --subsync-accent-soft: rgba(63, 127, 245, 0.16);
+  --subsync-blue: #3f7ff5;
+  --subsync-blue-hover: #66a0ff;
+  --subsync-success: #12805c;
+  --subsync-error: #b42318;
+  --subsync-overlay-bg: rgba(255, 255, 255, 0.65);
+  --subsync-tooltip-bg: rgba(255, 255, 255, 0.98);
+  --subsync-popup-bg: #ffffff;
+  --subsync-modal-bg: #ffffff;
+  --subsync-modal-backdrop: rgba(15, 23, 42, 0.32);
+  --subsync-focus: rgba(40, 103, 217, 0.85);
+  --subsync-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+  --subsync-shadow-strong: 0 16px 48px rgba(15, 23, 42, 0.2);
+  --subsync-text-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+  --subsync-peek-bg: rgba(15, 23, 42, 0.045);
+  --subsync-peek-surface: rgba(15, 23, 42, 0.08);
+  --subsync-peek-border: rgba(15, 23, 42, 0.12);
+}
+
+body[data-subsync-theme="glass"] {
+  --subsync-panel-bg: rgba(24, 24, 24, 0.6);
+  --subsync-panel-text: rgba(255, 255, 255, 0.92);
+  --subsync-panel-border: rgba(178, 178, 178, 0.34);
+  --subsync-divider: rgba(178, 178, 178, 0.24);
+  --subsync-panel-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 12px rgba(0, 0, 0, 0.18);
+  --subsync-bar-bg: rgba(24, 24, 24, 0.52);
+  --subsync-surface: rgba(255, 255, 255, 0.08);
+  --subsync-surface-strong: rgba(255, 255, 255, 0.12);
+  --subsync-surface-hover: rgba(255, 255, 255, 0.18);
+  --subsync-inset: rgba(10, 10, 10, 0.36);
+  --subsync-input-bg: rgba(255, 255, 255, 0.1);
+  --subsync-text: rgba(255, 255, 255, 0.92);
+  --subsync-text-strong: rgba(255, 255, 255, 0.96);
+  --subsync-text-secondary: rgba(235, 235, 235, 0.72);
+  --subsync-text-muted: rgba(220, 220, 220, 0.62);
+  --subsync-text-subtle: rgba(204, 204, 204, 0.48);
+  --subsync-text-dim: rgba(255, 255, 255, 0.82);
+  --subsync-accent: #3f7ff5;
+  --subsync-accent-text: #66a0ff;
+  --subsync-accent-soft: rgba(63, 127, 245, 0.24);
+  --subsync-blue: #3f7ff5;
+  --subsync-blue-hover: #66a0ff;
+  --subsync-success: #79e6ba;
+  --subsync-error: #ffb4c1;
+  --subsync-overlay-bg: rgba(18, 18, 18, 0.58);
+  --subsync-tooltip-bg: rgba(24, 24, 24, 0.78);
+  --subsync-popup-bg: rgba(24, 24, 24, 0.78);
+  --subsync-modal-bg: rgba(24, 24, 24, 0.82);
+  --subsync-modal-backdrop: rgba(0, 0, 0, 0.58);
+  --subsync-focus: #66a0ff;
+  --subsync-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  --subsync-shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.38);
+  --subsync-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.62);
+  --subsync-peek-bg: rgba(8, 8, 8, 0.42);
+  --subsync-peek-surface: rgba(255, 255, 255, 0.055);
+  --subsync-peek-border: rgba(178, 178, 178, 0.28);
+  --subsync-glass-background:
+    radial-gradient(
+      90.16% 143.01% at 15.32% 21.04%,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.03) 77.08%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(24, 24, 24, 0.42);
+}
+
+/* 빠른 바와 메인 패널 */
+body[data-subsync-theme] .subsync-quick-bar {
+  background: var(--subsync-bar-bg);
+  border-color: var(--subsync-panel-border);
+  box-shadow: var(--subsync-shadow);
+  color: var(--subsync-text);
+}
+
+body[data-subsync-theme] .subsync-quick-bar:hover {
+  border-color: var(--subsync-panel-border);
+  box-shadow: var(--subsync-shadow-strong);
+}
+
+body[data-subsync-theme] .subsync-qb-drag-handle,
+body[data-subsync-theme] .subsync-qb-toggle,
+body[data-subsync-theme] .subsync-qb-panel-toggle {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-qb-toggle {
+  color: var(--subsync-text);
+}
+
+body[data-subsync-theme] .subsync-qb-drag-handle:hover,
+body[data-subsync-theme] .subsync-qb-panel-toggle:hover {
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-qb-script,
+body[data-subsync-theme] .subsync-action-btn {
+  background: var(--subsync-surface-strong);
+  border-color: var(--subsync-panel-border);
+  color: var(--subsync-text);
+}
+
+body[data-subsync-theme] .subsync-action-btn {
+  background: var(--subsync-accent);
+  border-color: var(--subsync-accent);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-qb-script:hover,
+body[data-subsync-theme] .subsync-action-btn:hover {
+  background: var(--subsync-accent-soft);
+  border-color: var(--subsync-accent);
+  color: var(--subsync-accent-text);
+}
+
+body[data-subsync-theme] .subsync-action-btn:hover {
+  background: var(--subsync-blue-hover);
+  border-color: var(--subsync-blue-hover);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-qb-panel-toggle {
+  background: var(--subsync-surface-strong);
+}
+
+body[data-subsync-theme] .subsync-container,
+body[data-subsync-theme] .subsync-script-panel-container {
+  background: var(--subsync-panel-bg);
+  border-color: var(--subsync-panel-border);
+  box-shadow: var(--subsync-panel-shadow);
+  color: var(--subsync-panel-text);
+}
+
+body[data-subsync-theme] .subsync-panel-header {
+  background: var(--subsync-surface);
+  border-bottom-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-brand {
+  color: var(--subsync-accent);
+}
+
+body[data-subsync-theme] .subsync-btn-small {
+  background: var(--subsync-surface-strong);
+  color: var(--subsync-text-dim);
+}
+
+body[data-subsync-theme] .subsync-btn-small:hover {
+  background: var(--subsync-accent);
+  color: #ffffff;
+}
+
+
+body[data-subsync-theme] .subsync-btn-close {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-nav-tabs {
+  background: var(--subsync-inset);
+  border-bottom-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-nav-btn {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-nav-btn.active {
+  background: transparent;
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-view-loading,
+body[data-subsync-theme] .subsync-view-empty,
+body[data-subsync-theme] .subsync-view-error,
+body[data-subsync-theme] .subsync-saved-header,
+body[data-subsync-theme] .subsync-st-desc,
+body[data-subsync-theme] .subsync-h-date {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-saved-item,
+body[data-subsync-theme] .subsync-settings-card,
+body[data-subsync-theme] .subsync-history-item {
+  background: var(--subsync-surface);
+  border-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-saved-word,
+body[data-subsync-theme] .subsync-h-word {
+  color: var(--subsync-accent-text);
+}
+
+
+body[data-subsync-theme] .subsync-saved-meaning,
+body[data-subsync-theme] .subsync-h-meaning,
+body[data-subsync-theme] .subsync-radio-group {
+  color: var(--subsync-text-secondary);
+}
+
+/* 설정 및 기록 */
+body[data-subsync-theme] .subsync-st-title {
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-slider {
+  background-color: var(--subsync-text-subtle);
+}
+
+body[data-subsync-theme] .subsync-switch input:checked + .subsync-slider,
+body[data-subsync-theme] .subsync-htab.active {
+  background-color: var(--subsync-accent);
+}
+
+body[data-subsync-theme] .subsync-htab {
+  background: var(--subsync-surface-strong);
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-htab.active {
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-theme-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+body[data-subsync-theme] .subsync-theme-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--subsync-text-secondary);
+  cursor: pointer;
+}
+
+body[data-subsync-theme] .subsync-theme-option input {
+  accent-color: var(--subsync-accent);
+}
+
+/* Script 패널 */
+body[data-subsync-theme] .subsync-script-panel-header {
+  background: var(--subsync-surface);
+  border-bottom-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-script-title-text,
+body[data-subsync-theme] .subsync-script-search-bar input,
+body[data-subsync-theme] .subsync-script-en {
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-script-tool-btn,
+body[data-subsync-theme] .subsync-script-time {
+  background: var(--subsync-surface-strong);
+  border-color: var(--subsync-panel-border);
+  color: var(--subsync-text-secondary);
+}
+
+body[data-subsync-theme] .subsync-script-tool-btn:hover {
+  background: var(--subsync-surface-hover);
+}
+
+body[data-subsync-theme] .subsync-script-close-btn {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-script-close-btn:hover {
+  color: var(--subsync-accent);
+}
+
+body[data-subsync-theme] .subsync-script-search-bar {
+  background: var(--subsync-inset);
+  border-bottom-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-script-search-bar input {
+  background: var(--subsync-input-bg);
+  border-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-script-search-bar input:focus {
+  border-color: var(--subsync-accent);
+}
+
+body[data-subsync-theme] .subsync-script-row {
+  background: var(--subsync-surface);
+  border-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-script-row:hover {
+  background: var(--subsync-surface-hover);
+  border-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-script-row.active {
+  background: var(--subsync-accent-soft);
+  border-color: var(--subsync-accent);
+}
+
+body[data-subsync-theme] .subsync-script-time {
+  color: var(--subsync-blue);
+}
+
+body[data-subsync-theme] .subsync-script-time:hover {
+  background: var(--subsync-blue);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-script-ko,
+body[data-subsync-theme] .subsync-script-row.active .subsync-script-ko {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-script-panel-collapsed:hover {
+  border-color: var(--subsync-peek-border);
+  box-shadow: var(--subsync-shadow-strong);
+}
+
+body[data-subsync-theme] .subsync-script-panel-collapsed:hover .subsync-script-list {
+  background: var(--subsync-peek-bg);
+  border-top-color: var(--subsync-peek-border);
+}
+
+body[data-subsync-theme] .subsync-script-panel-collapsed:hover .subsync-script-list::before {
+  border-color: var(--subsync-peek-border);
+  background: var(--subsync-peek-surface);
+}
+
+/* Tutor */
+body[data-subsync-theme] .subsync-tutor-box {
+  background: var(--subsync-inset);
+}
+
+body[data-subsync-theme] .subsync-tutor-header {
+  color: var(--subsync-accent-text);
+}
+
+body[data-subsync-theme] .subsync-msg.user,
+body[data-subsync-theme] .subsync-tutor-input-box button {
+  background: var(--subsync-accent);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-msg.tutor {
+  background: var(--subsync-surface-strong);
+  border-color: var(--subsync-panel-border);
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-tutor-input-box input {
+  background: var(--subsync-input-bg);
+  border-color: var(--subsync-panel-border);
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-fb-done {
+  color: var(--subsync-success);
+}
+
+/* 자막 오버레이 및 패널 */
+body[data-subsync-theme] .subsync-overlay-content {
+  background: var(--subsync-overlay-bg);
+  border-color: var(--subsync-panel-border);
+  box-shadow: var(--subsync-shadow-strong);
+}
+
+body[data-subsync-theme] .subsync-overlay-en {
+  color: var(--subsync-text-strong);
+  text-shadow: var(--subsync-text-shadow);
+}
+
+body[data-subsync-theme] .subsync-overlay-en .subsync-word:hover {
+  background: var(--subsync-accent);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-overlay-ko,
+body[data-subsync-theme] .subsync-sub-known {
+  color: var(--subsync-blue);
+}
+
+body[data-subsync-theme="light"] .subsync-overlay-ko {
+  color: var(--subsync-accent-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: none;
+}
+
+body[data-subsync-theme] .subsync-subtitle-box {
+  background: var(--subsync-inset);
+  border-left-color: var(--subsync-accent);
+}
+
+/* 화이트 테마 내부 패널 대비 */
+body[data-subsync-theme="light"] .subsync-settings-card,
+body[data-subsync-theme="light"] .subsync-saved-item,
+body[data-subsync-theme="light"] .subsync-history-item,
+body[data-subsync-theme="light"] .subsync-msg.tutor {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+body[data-subsync-theme="light"] .subsync-tutor-box .subsync-tutor-thinking-dot {
+  background: #000000;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.32);
+}
+
+body[data-subsync-theme="light"] .subsync-tutor-box {
+  background: var(--subsync-overlay-bg);
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+body[data-subsync-theme] .subsync-settings-card .subsync-setting-row + .subsync-setting-row,
+body[data-subsync-theme] .subsync-settings-card .subsync-setting-section {
+  border-top: 1px solid var(--subsync-divider);
+  padding-top: 12px;
+}
+
+body[data-subsync-theme="light"] .subsync-subtitle-box {
+  background: var(--subsync-overlay-bg);
+  border: 1px solid rgba(15, 23, 42, 0.22);
+  border-left: 3px solid var(--subsync-accent);
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+body[data-subsync-theme="light"] .subsync-overlay-content {
+  background: var(--subsync-overlay-bg);
+  border: 1px solid rgba(15, 23, 42, 0.22);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+body[data-subsync-theme="light"] .subsync-subtitle-box .subsync-sub-known {
+  border-top: 1px solid rgba(15, 23, 42, 0.14);
+  padding-top: 6px;
+}
+
+body[data-subsync-theme="light"] .subsync-htab {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  color: var(--subsync-text-secondary);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+body[data-subsync-theme="light"] .subsync-htab.active {
+  border-color: var(--subsync-accent);
+  box-shadow: 0 3px 10px rgba(63, 127, 245, 0.2);
+}
+
+body[data-subsync-theme="light"] .subsync-history-activity {
+  background: rgba(63, 127, 245, 0.1);
+  border-color: rgba(40, 103, 217, 0.28);
+  color: var(--subsync-accent-text);
+}
+
+body[data-subsync-theme="light"] .subsync-history-video-thumb {
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.36);
+}
+
+body[data-subsync-theme] .subsync-sub-learn {
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-sub-empty {
+  color: var(--subsync-text-muted);
+}
+
+/* 단어 상호작용 및 팝업 */
+body[data-subsync-theme] .subsync-word:hover {
+  background: var(--subsync-accent);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-hover-tooltip,
+body[data-subsync-theme] .subsync-click-popup {
+  background: var(--subsync-tooltip-bg);
+  border-color: var(--subsync-panel-border);
+  box-shadow: var(--subsync-shadow-strong);
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-tt-word,
+body[data-subsync-theme] .subsync-popup-word {
+  color: var(--subsync-accent-text);
+}
+
+body[data-subsync-theme] .subsync-tt-mean,
+body[data-subsync-theme] .subsync-popup-pos,
+body[data-subsync-theme] .subsync-popup-defs,
+body[data-subsync-theme] .subsync-popup-phrase-item {
+  color: var(--subsync-text-secondary);
+}
+
+body[data-subsync-theme] .subsync-tt-loading,
+body[data-subsync-theme] .subsync-popup-phonetic,
+body[data-subsync-theme] .subsync-popup-phrases-title,
+body[data-subsync-theme] .subsync-popup-close-btn {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-tt-hint {
+  color: var(--subsync-blue);
+}
+
+body[data-subsync-theme] .subsync-tt-hint:hover {
+  color: var(--subsync-blue-hover);
+}
+
+body[data-subsync-theme] .subsync-popup-header,
+body[data-subsync-theme] .subsync-popup-phrases {
+  border-color: var(--subsync-panel-border);
+}
+
+body[data-subsync-theme] .subsync-popup-save-btn {
+  background: var(--subsync-accent);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-popup-save-btn:disabled {
+  background: var(--subsync-surface-strong);
+  color: var(--subsync-text-muted);
+  cursor: wait;
+  opacity: 0.72;
+}
+
+body[data-subsync-theme] .subsync-popup-save-btn.subsync-popup-save-saved {
+  background: rgba(255, 213, 74, 0.16);
+  color: #ffd54a;
+  box-shadow: 0 0 10px rgba(255, 213, 74, 0.28);
+}
+
+body[data-subsync-theme] .subsync-popup-context {
+  background: var(--subsync-inset);
+  color: var(--subsync-blue);
+}
+
+body[data-subsync-theme] .subsync-popup-error {
+  color: var(--subsync-error);
+}
+
+/* 인증 모달 */
+body[data-subsync-theme] .subsync-auth-modal-overlay {
+  background: var(--subsync-modal-backdrop);
+}
+
+body[data-subsync-theme] .subsync-auth-modal {
+  background: var(--subsync-modal-bg);
+  border-color: var(--subsync-panel-border);
+  box-shadow: var(--subsync-shadow-strong);
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-auth-title {
+  color: var(--subsync-accent);
+}
+
+body[data-subsync-theme] .subsync-auth-desc,
+body[data-subsync-theme] .subsync-auth-footer {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme] .subsync-auth-inputs input {
+  background: var(--subsync-input-bg);
+  border-color: var(--subsync-panel-border);
+  color: var(--subsync-text-strong);
+}
+
+body[data-subsync-theme] .subsync-auth-inputs input:focus {
+  border-color: var(--subsync-accent);
+}
+
+body[data-subsync-theme] .subsync-btn-primary {
+  background: var(--subsync-accent);
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-auth-modal .subsync-auth-google-btn {
+  background: #3a3f48;
+  color: #ffffff;
+}
+
+body[data-subsync-theme] .subsync-auth-modal .subsync-auth-google-btn:hover:not(:disabled) {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+body[data-subsync-theme] .subsync-btn-secondary {
+  background: var(--subsync-surface-strong);
+  color: var(--subsync-text-secondary);
+}
+
+body[data-subsync-theme] .subsync-auth-footer a {
+  color: var(--subsync-accent-text);
+}
+
+/* 포커스 테두리와 고정 색상 SVG */
+body[data-subsync-theme] .subsync-quick-bar button:focus-visible,
+body[data-subsync-theme] .subsync-container button:focus-visible,
+body[data-subsync-theme] .subsync-script-panel-container button:focus-visible,
+body[data-subsync-theme] .subsync-auth-modal-overlay button:focus-visible,
+body[data-subsync-theme] .subsync-tutor-box button:focus-visible,
+body[data-subsync-theme] .subsync-container input:focus-visible,
+body[data-subsync-theme] .subsync-script-panel-container input:focus-visible,
+body[data-subsync-theme] .subsync-auth-modal-overlay input:focus-visible {
+  outline-color: var(--subsync-focus);
+}
+
+/* 글라스 테마의 반투명 광원·블러 패널 */
+body[data-subsync-theme="glass"] .subsync-quick-bar,
+body[data-subsync-theme="glass"] .subsync-container,
+body[data-subsync-theme="glass"] .subsync-script-panel-container,
+body[data-subsync-theme="glass"] .subsync-tutor-box,
+body[data-subsync-theme="glass"] .subsync-hover-tooltip,
+body[data-subsync-theme="glass"] .subsync-click-popup,
+body[data-subsync-theme="glass"] .subsync-auth-modal {
+  background: var(--subsync-glass-background);
+  background-blend-mode: overlay, normal;
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+  border-color: var(--subsync-panel-border);
+  box-shadow: var(--subsync-panel-shadow);
+}
+
+/* Chromium에서는 SVG displacement로 뒤 배경을 실제 굴절시킨다. */
+@supports (backdrop-filter: url("#subsync-liquid-glass-filter")) {
+  body[data-subsync-theme="glass"] .subsync-quick-bar,
+  body[data-subsync-theme="glass"] .subsync-container,
+  body[data-subsync-theme="glass"] .subsync-script-panel-container,
+  body[data-subsync-theme="glass"] .subsync-tutor-box,
+  body[data-subsync-theme="glass"] .subsync-hover-tooltip,
+  body[data-subsync-theme="glass"] .subsync-click-popup,
+  body[data-subsync-theme="glass"] .subsync-auth-modal,
+  body[data-subsync-theme="glass"] .subsync-panel-header,
+  body[data-subsync-theme="glass"] .subsync-script-panel-header,
+  body[data-subsync-theme="glass"] .subsync-nav-tabs,
+  body[data-subsync-theme="glass"] .subsync-settings-card,
+  body[data-subsync-theme="glass"] .subsync-saved-item,
+  body[data-subsync-theme="glass"] .subsync-history-item,
+  body[data-subsync-theme="glass"] .subsync-msg.tutor,
+  body[data-subsync-theme="glass"] .subsync-subtitle-box,
+  body[data-subsync-theme="glass"] .subsync-overlay-content,
+  body[data-subsync-theme="glass"] .subsync-tutor-input-box input,
+  body[data-subsync-theme="glass"] .subsync-script-search-bar input {
+    backdrop-filter: url("#subsync-liquid-glass-filter") blur(10px) saturate(145%);
+    -webkit-backdrop-filter: url("#subsync-liquid-glass-filter") blur(10px) saturate(145%);
+  }
+}
+
+body[data-subsync-theme="glass"] .subsync-quick-bar {
+  border-radius: 24px;
+}
+
+body[data-subsync-theme="glass"] .subsync-container {
+  border: none;
+  outline: none;
+  border-radius: 28px;
+  isolation: isolate;
+}
+
+body[data-subsync-theme="glass"] .subsync-script-panel-container {
+  border-radius: 24px;
+}
+
+body[data-subsync-theme="glass"] .subsync-tutor-box {
+  border-radius: 20px;
+}
+
+body[data-subsync-theme="glass"] .subsync-hover-tooltip,
+body[data-subsync-theme="glass"] .subsync-click-popup {
+  border-radius: 18px;
+}
+
+body[data-subsync-theme="glass"] .subsync-auth-modal {
+  border-radius: 24px;
+}
+
+body[data-subsync-theme="glass"] .subsync-panel-header,
+body[data-subsync-theme="glass"] .subsync-script-panel-header,
+body[data-subsync-theme="glass"] .subsync-nav-tabs {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(178, 178, 178, 0.24);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+
+body[data-subsync-theme="glass"] .subsync-settings-card,
+body[data-subsync-theme="glass"] .subsync-saved-item,
+body[data-subsync-theme="glass"] .subsync-history-item,
+body[data-subsync-theme="glass"] .subsync-msg.tutor {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+}
+
+body[data-subsync-theme="glass"] .subsync-history-item {
+  background: rgba(24, 24, 24, 0.78);
+  border-color: rgba(178, 178, 178, 0.32);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+/* Glass 저장소 단어 카드도 어두운 표면으로 가독성을 확보 */
+body[data-subsync-theme="glass"] .subsync-saved-item {
+  background: rgba(24, 24, 24, 0.78);
+  border-color: rgba(178, 178, 178, 0.32);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+/* Glass 설정 영역만 더 어둡게 해 작은 설명 텍스트의 대비를 확보 */
+body[data-subsync-theme="glass"] .subsync-settings-card {
+  background: rgba(24, 24, 24, 0.78);
+  border-color: rgba(178, 178, 178, 0.32);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+@supports (backdrop-filter: url("#subsync-liquid-glass-filter")) {
+  body[data-subsync-theme="glass"] .subsync-settings-card,
+  body[data-subsync-theme="glass"] .subsync-saved-item {
+    backdrop-filter: url("#subsync-liquid-glass-filter") blur(10px) saturate(145%);
+    -webkit-backdrop-filter: url("#subsync-liquid-glass-filter") blur(10px) saturate(145%);
+  }
+}
+
+/* 설정 카드와 같은 어두운 표면을 Tutor·Script에도 적용 */
+body[data-subsync-theme="glass"] .subsync-script-panel-container {
+  background: rgba(24, 24, 24, 0.78);
+  border-color: rgba(178, 178, 178, 0.32);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+body[data-subsync-theme="glass"] .subsync-tutor-box {
+  background: rgba(24, 24, 24, 0.78);
+  border-color: rgba(178, 178, 178, 0.32);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.24);
+}
+
+@supports (backdrop-filter: url("#subsync-liquid-glass-filter")) {
+  body[data-subsync-theme="glass"] .subsync-script-panel-container,
+  body[data-subsync-theme="glass"] .subsync-tutor-box {
+    backdrop-filter: url("#subsync-liquid-glass-filter") blur(10px) saturate(145%);
+    -webkit-backdrop-filter: url("#subsync-liquid-glass-filter") blur(10px) saturate(145%);
+  }
+}
+
+body[data-subsync-theme="glass"] .subsync-subtitle-box,
+body[data-subsync-theme="glass"] .subsync-overlay-content,
+body[data-subsync-theme="glass"] .subsync-tutor-input-box input,
+body[data-subsync-theme="glass"] .subsync-script-search-bar input {
+  background: rgba(18, 18, 18, 0.42);
+  border-color: rgba(178, 178, 178, 0.3);
+  backdrop-filter: blur(20px) saturate(125%);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
+}
+
+body[data-subsync-theme="glass"] .subsync-overlay-content {
+  background: rgba(18, 18, 18, 0.58);
+}
+
+body[data-subsync-theme="glass"] .subsync-overlay-ko {
+  color: #72d5ff;
+  font-size: 16px;
+  font-weight: 600;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.92),
+    0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+body[data-subsync-theme="glass"] .subsync-sub-known {
+  color: #72d5ff;
+  font-weight: 700;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.92),
+    0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Glass Script 타임스탬프를 한국어 자막과 동일한 색으로 통일 */
+body[data-subsync-theme="glass"] .subsync-script-time {
+  color: var(--subsync-text-muted);
+}
+
+body[data-subsync-theme="glass"] .subsync-auth-modal-overlay {
+  background: var(--subsync-modal-backdrop);
+}
+
+body[data-subsync-theme="glass"] .subsync-script-panel-collapsed:hover .subsync-script-list {
+  background: rgba(8, 8, 12, 0.38);
+  border-top-color: var(--subsync-peek-border);
+}
+
+body[data-subsync-theme="light"] .subsync-nav-icon,
+body[data-subsync-theme="light"] .subsync-qb-icon,
+body[data-subsync-theme="light"] .subsync-qb-expand-icon,
+body[data-subsync-theme="light"] .subsync-script-header-icon,
+body[data-subsync-theme="light"] .subsync-tutor-icon {
+  filter: brightness(0) saturate(100%);
+}
+
+body[data-subsync-theme="light"] .subsync-script-search-icon {
+  opacity: 1;
+  filter: brightness(0) saturate(100%);
+}
+
+/* 테마 전환 중에만 색상 속성을 부드럽게 보간 */
+body[data-subsync-theme].subsync-theme-transitioning .subsync-quick-bar,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-quick-bar *,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-container,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-container *,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-script-panel-container,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-script-panel-container *,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-hover-tooltip,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-hover-tooltip *,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-click-popup,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-click-popup *,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-auth-modal-overlay,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-auth-modal-overlay *,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-tutor-box,
+body[data-subsync-theme].subsync-theme-transitioning .subsync-tutor-box * {
+  transition:
+    background 280ms ease,
+    background-color 280ms ease,
+    color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease,
+    text-shadow 280ms ease,
+    filter 280ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-quick-bar,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-quick-bar *,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-container,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-container *,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-script-panel-container,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-script-panel-container *,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-hover-tooltip,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-hover-tooltip *,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-click-popup,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-click-popup *,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-auth-modal-overlay,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-auth-modal-overlay *,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-tutor-box,
+  body[data-subsync-theme].subsync-theme-transitioning .subsync-tutor-box * {
+    transition: none;
+  }
+}
