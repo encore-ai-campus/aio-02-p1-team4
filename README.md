@@ -187,7 +187,9 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 
 <hr />
 
-4
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/4.gif" alt="SubSync AI Tutor 탭 질문·답변 시연" width="740" />
+</p>
 
 ### AI Tutor 탭
 
