@@ -9,7 +9,7 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 
 > 프로젝트: 엔코아 멀티 에이전트 AI 오케스트레이션 2기 · Team 4
 
-3. [주요 기능](#-주요-기능) · [🧩 Frontend Repo](https://github.com/931njhthe-star/subsync-frontend) · [⚙️ Backend Repo](https://github.com/931njhthe-star/subsync-backend) · [📊 Dashboard Repo](https://github.com/931njhthe-star/subsync-dashboard)
+🔗 [주요 기능](#-주요-기능) · [🧩 Frontend Repo](https://github.com/931njhthe-star/subsync-frontend) · [⚙️ Backend Repo](https://github.com/931njhthe-star/subsync-backend) · [📊 Dashboard Repo](https://github.com/931njhthe-star/subsync-dashboard)
 
 ---
 
@@ -32,8 +32,6 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 <p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/1.gif" alt="SubSync 1번 GIF" width="740" />
 </p>
-
-
 
 **SubSync**는 YouTube 영상을 시청하면서 영어를 학습할 수 있도록 만든 Chrome Extension 기반 영어 학습 서비스입니다.
 
@@ -88,21 +86,17 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 - **자유로운 드래그 이동**
   - 퀵바, 영상 위 자막, 메인 패널을 원하는 위치로 드래그할 수 있습니다.
   - 학습 환경과 영상 화면 구성에 맞춰 각 UI를 편리하게 배치할 수 있습니다.
-  - 
 - **더블클릭으로 원위치 복귀**
   - 퀵바·자막·메인 패널을 더블클릭하면 기본 위치로 부드럽게 돌아갑니다.
   - 화면을 정리하거나 처음 배치로 되돌리고 싶을 때 빠르게 복구할 수 있습니다.
-  - 
 - **퀵바 위치를 따라 펼쳐지는 패널**
   - 퀵바를 펼치면 메인 패널이 현재 퀵바 위치를 기준으로 이동한 뒤 자연스럽게 펼쳐집니다.
   - 사용자가 배치한 위치를 유지하면서 필요한 학습 화면을 바로 확인할 수 있습니다.
-  - 
 - **메인 패널 리사이징**
   - 메인 패널의 여덟 방향 핸들을 이용해 가로·세로 크기를 자유롭게 조절할 수 있습니다.
   - 패널 크기에 맞춰 Script와 AI Tutor 영역도 함께 확장되어 화면을 효율적으로 사용할 수 있습니다.
 
-
-
+<hr />
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/3.gif" alt="SubSync 영상 학습 UI" width="740" />
@@ -133,13 +127,19 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
   - 기본 정의와 현재 문맥에서의 의미를 제공합니다.
   - 관련 표현과 추가 학습 정보를 확인할 수 있습니다.
 
-
-
 ### 저장소 탭
 
 학습 중 발견한 단어를 저장하고, 저장한 단어와 학습 이력을 관리합니다.
 
+<hr />
+
 ![저장소 탭 미리보기](./docs/gifs/storage-tab.gif)
+
+<br />
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/6.gif" alt="SubSync 저장소 탭 추가 시연" width="740" />
+</p>
 
 - **단어 저장**
   - 자막, Script, 단어 상세 화면에서 학습한 단어를 저장합니다.
@@ -157,6 +157,7 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
   - 저장한 단어와 반복 학습 기록을 계정 기반으로 관리합니다.
   - Google 로그인 후 여러 환경에서 학습 기록을 이어서 확인할 수 있습니다.
 
+<hr />
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/5.gif" alt="SubSync 5번 기능 시연" width="740" />
@@ -165,6 +166,8 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 ### Google 로그인
 
 Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에 연결합니다.
+
+<hr />
 
 ![Google 로그인 및 계정 연결 미리보기](./docs/gifs/google-login.gif)
 
@@ -180,7 +183,7 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
   - 저장한 단어와 시청 기록을 계정에 연결합니다.
   - 다른 환경에서도 동일한 학습 기록을 확인할 수 있습니다.
 
-
+<hr />
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/4.gif" alt="SubSync 4번 기능 시연" width="740" />
@@ -189,6 +192,8 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 ### AI Tutor 탭
 
 현재 시청 중인 영상과 자막 문맥을 활용하여 영어 학습을 돕는 대화형 AI Tutor를 제공합니다.
+
+<hr />
 
 ![AI Tutor 탭 미리보기](./docs/gifs/ai-tutor-tab.gif)
 
@@ -211,6 +216,8 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 ### 설정 탭
 
 학습 방식과 화면 환경에 맞춰 SubSync의 동작과 UI를 개인화합니다.
+
+<hr />
 
 ![설정 탭 미리보기](./docs/gifs/settings-tab.gif)
 
@@ -389,9 +396,8 @@ GET https://subsync-backend-4bmh.onrender.com/api/v1/dictionary/hover?word=hones
 Frontend는 Streamlit cloud / Chrome Web store에 배포되어 있습니다.
 
 
--[Dashboard(streamlit)] (https://subsync-dashboard-5xicocfzxxf2lngqm4mj7s.streamlit.app)
-
--[Frontend(Chrome Extension)] (https://chromewebstore.google.com/detail/subsync/akckibdjhdhehbfjellpgododmcpfphc?authuser=0&hl=ko)
+- [Dashboard (Streamlit)](https://subsync-dashboard-5xicocfzxxf2lngqm4mj7s.streamlit.app)
+- [Frontend (Chrome Extension)](https://chromewebstore.google.com/detail/subsync/akckibdjhdhehbfjellpgododmcpfphc?authuser=0&hl=ko)
 
 
 > Render 서버가 15분동안 사용이 없을시 서버가 잠드므로, 데이터 안나올시 몇분뒤 새로고침 하시면 됩니다.
@@ -401,5 +407,6 @@ Frontend는 Streamlit cloud / Chrome Web store에 배포되어 있습니다.
 
 
 ## 📚 관련 문서
+
 - [Project Dashboard](https://yleeylee.notion.site/Subsync-2102b0d658a68394bc070175f52809d0)
 ---
