@@ -166,10 +166,6 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 
 Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에 연결합니다.
 
-<hr />
-
-![Google 로그인 및 계정 연결 미리보기](./docs/gifs/google-login.gif)
-
 - **Google OAuth 로그인**
   - Google 계정으로 간편하게 로그인합니다.
   - 별도의 SubSync 전용 비밀번호를 생성할 필요가 없습니다.
@@ -192,9 +188,6 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 
 현재 시청 중인 영상과 자막 문맥을 활용하여 영어 학습을 돕는 대화형 AI Tutor를 제공합니다.
 
-<hr />
-
-![AI Tutor 탭 미리보기](./docs/gifs/ai-tutor-tab.gif)
 
 - **영상 문맥 기반 질의응답**
   - 현재 영상의 자막과 문맥을 바탕으로 질문에 답변합니다.
@@ -211,14 +204,13 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 - **답변 피드백**
   - AI Tutor 답변에 대한 피드백을 남길 수 있습니다.
   - 피드백을 통해 답변 품질을 평가할 수 있습니다.
+  - 
+<hr />
 
 ### 설정 탭
 
 학습 방식과 화면 환경에 맞춰 SubSync의 동작과 UI를 개인화합니다.
 
-<hr />
-
-![설정 탭 미리보기](./docs/gifs/settings-tab.gif)
 
 - **테마 설정**
   - 다크 테마, 화이트 테마, 글라스 테마를 선택할 수 있습니다.
