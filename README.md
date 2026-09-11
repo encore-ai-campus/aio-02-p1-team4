@@ -211,7 +211,7 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 - **답변 피드백**
   - AI Tutor 답변에 대한 피드백을 남길 수 있습니다.
   - 피드백을 통해 답변 품질을 평가할 수 있습니다.
-  - 
+  
 <hr />
 
 <p align="center">
