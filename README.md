@@ -1,5 +1,6 @@
-# 🎬 SubSync
 <img width="1774" height="887" alt="subysync 로고" src="https://github.com/user-attachments/assets/ee3093f9-d849-47f2-8aca-4aa1c109c425" />
+
+# 🎬 SubSync
 
 
 **YouTube를 보면서 자막, 단어 학습, AI Tutor까지 한 번에**
@@ -27,7 +28,7 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 ---
 
 ## ✨ 프로젝트 소개
-<img width="740" height="460" alt="thumb" src="https://github.com/user-attachments/assets/01cf4164-073b-48e1-81c1-5ca59bd3dfc7" />
+<img width="640" height="360" alt="thumb" src="https://github.com/user-attachments/assets/01cf4164-073b-48e1-81c1-5ca59bd3dfc7" />
 
 
 
@@ -76,9 +77,11 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 
 ### 영상 학습 탭
 
+<img width="1280" height="720" alt="thumb (1)" src="https://github.com/user-attachments/assets/af287ee3-cc28-4796-b9ff-40e89c7484ee" />
+
+
 영상 시청에 필요한 자막과 학습 도구를 한 화면에서 제공합니다. 재생 위치에 맞춘 자막 강조, Script 탐색, 단어 조회 기능을 사용할 수 있습니다.
 
-![영상 학습 탭 미리보기](./docs/gifs/video-learning-tab.gif)
 
 - **영·한 이중자막**
   - YouTube 영상의 영어 자막과 한국어 자막을 함께 표시합니다.
