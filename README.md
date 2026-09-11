@@ -28,7 +28,10 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 ---
 
 ## ✨ 프로젝트 소개
-1.gif
+
+<p align="center">
+  <img src="./1.gif" alt="SubSync 1번 GIF" width="740" />
+</p>
 
 
 
