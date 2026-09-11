@@ -77,11 +77,11 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 
 ## 🌟 주요 기능
 
-### 인터랙티브 UI
-
 <p align="center">
   <img src="./2.gif" alt="SubSync 인터랙티브 UI" width="740" />
 </p>
+
+### 인터랙티브 UI
 
 영상 시청 흐름을 끊지 않도록 퀵바, 영상 자막, 메인 패널을 자유롭게 배치하고 조작할 수 있습니다.
 
@@ -102,12 +102,13 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
   - 패널 크기에 맞춰 Script와 AI Tutor 영역도 함께 확장되어 화면을 효율적으로 사용할 수 있습니다.
 
 
-### 영상 학습 탭
+
 
 <p align="center">
   <img src="./3.gif" alt="SubSync 영상 학습 UI" width="740" />
 </p>
 
+### 영상 학습 탭
 
 영상 시청에 필요한 자막과 학습 도구를 한 화면에서 제공합니다. 재생 위치에 맞춘 자막 강조, Script 탐색, 단어 조회 기능을 사용할 수 있습니다.
 
