@@ -174,7 +174,9 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
   - 저장한 단어와 시청 기록을 계정에 연결합니다.
   - 다른 환경에서도 동일한 학습 기록을 확인할 수 있습니다.
 
-4.gif
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/4.gif" alt="SubSync 4번 기능 시연" width="740" />
+</p>
 
 ### AI Tutor 탭
 
