@@ -1,3 +1,6 @@
+<img width="1774" height="887" alt="subysync 로고" src="https://github.com/user-attachments/assets/df24b21f-0cb9-47dd-a5b5-af6ef14d9516" />
+
+
 # 🎬 SubSync
 
 **YouTube를 보면서 자막, 단어 학습, AI Tutor까지 한 번에**
