@@ -78,7 +78,7 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 ## 🌟 주요 기능
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/2.gif" alt="SubSync 인터랙티브 UI" width="740" />
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/2.gif" alt="SubSync 인터랙티브 UI와 Script 시연" width="740" />
 </p>
 
 ### 인터랙티브 UI
