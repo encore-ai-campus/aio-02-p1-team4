@@ -9,7 +9,7 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 
 > 프로젝트: 엔코아 멀티 에이전트 AI 오케스트레이션 2기 · Team 4
 
-🔗 [주요 기능](#-주요-기능) · [🧩 Frontend Repo](https://github.com/931njhthe-star/subsync-frontend) · [⚙️ Backend Repo](https://github.com/931njhthe-star/subsync-backend) · [📊 Dashboard Repo](https://github.com/931njhthe-star/subsync-dashboard)
+[🌟주요 기능](#-주요-기능) · [🧩 Frontend Repo](https://github.com/931njhthe-star/subsync-frontend) · [⚙️ Backend Repo](https://github.com/931njhthe-star/subsync-backend) · [📊 Dashboard Repo](https://github.com/931njhthe-star/subsync-dashboard)
 
 ---
 
@@ -225,6 +225,7 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 
 - **테마 설정**
   - 다크 테마, 화이트 테마, 글라스 테마를 선택할 수 있습니다.
+  - 글라스 테마는 실시간 반응형 글래스 효과를 지원합니다
 
 - **폰트 설정**
   - 기본 시스템 폰트와 지원되는 사용자 지정 폰트를 선택할 수 있습니다.
@@ -284,10 +285,10 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 
 SubSync는 Streamlit 기반 대시보드에서 서비스 운영 현황과 AI·API 사용량을 분석합니다. FastAPI Dashboard API로 데이터를 조회하고 화면별 기간·필터를 적용할 수 있습니다.
 
-- **대시보드 홈**: 기간별 사용자·AI 호출 수, 일별 AI 사용량, 최근 활동, 제공자별 호출 비중을 확인합니다.
-- **AI 사용량**: 모델·사용자별 요청·토큰, 평균·P95 응답시간, 오류율, 제공자·일별 추이와 상세 내역을 확인합니다.
-- **API 호출**: 엔드포인트·사용자별 요청·성공률·응답시간·오류와 최근 상태 코드를 확인하며, 429 발생 시 Rate Limit 안내를 표시합니다.
-- **공통 기능**: 화면별 조회 기간·필터, 데이터 연결 상태, API 상태와 마지막 스냅샷을 확인합니다.
+- 대시보드 홈: 기간별 사용자·AI 호출 수, 일별 AI 사용량, 최근 활동, 제공자별 호출 비중을 확인합니다.
+- AI 사용량: 모델·사용자별 요청·토큰, 평균·P95 응답시간, 오류율, 제공자·일별 추이와 상세 내역을 확인합니다.
+- API 호출: 엔드포인트·사용자별 요청·성공률·응답시간·오류와 최근 상태 코드를 확인하며, 429 발생 시 Rate Limit 안내를 표시합니다.
+- 공통 기능: 화면별 조회 기간·필터, 데이터 연결 상태, API 상태와 마지막 스냅샷을 확인합니다.
 
 [📊 Dashboard 바로가기](https://subsync-dashboard-5xicocfzxxf2lngqm4mj7s.streamlit.app)
 
