@@ -138,12 +138,6 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 <br />
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/5.gif" alt="SubSync 저장소 탭 시청 기록 시연" width="740" />
-</p>
-
-<br />
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/6.gif" alt="SubSync 저장소 탭 단어·시청 기록 시연" width="740" />
 </p>
 
@@ -168,6 +162,12 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
   - Google 로그인 후 여러 환경에서 학습 기록을 이어서 확인할 수 있습니다.
 
 <hr />
+
+<br />
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/5.gif" alt="SubSync 5번 기능 시연" width="740" />
+</p>
 
 ### Google 로그인
 
