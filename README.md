@@ -48,7 +48,7 @@ SubSync는 크게 세 개의 시스템으로 구성됩니다.
 |---|---|
 | **Chrome Extension** | 이중자막, Script, 단어 학습, Video Tutor, 로그인, 학습 설정을 제공하는 사용자 화면 |
 | **FastAPI Backend** | 인증, 단어 조회/저장, Tutor AI 호출, 학습 데이터 저장, 로그 수집, LLM 사용량 관리를 담당하는 REST API |
-| **Streamlit Dashboard** | 사용자 활동, 저장 단어, Tutor 사용량, API 상태 및 LLM 사용량을 분석하는 내부 운영 화면 |
+| **Streamlit Dashboard** | 사용자·AI·API 사용량과 운영 상태를 분석하는 내부 운영 화면 |
 
 ---
 
@@ -278,23 +278,29 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 
 ## 📊 대시보드
 
-SubSync는 Streamlit 기반 대시보드를 통해 서비스 운영 현황과 학습 데이터를 분석합니다. 대시보드는 FastAPI Dashboard API를 통해 데이터를 조회하며, 사용자 활동과 AI Tutor·API 사용 현황을 한눈에 확인할 수 있습니다.
+SubSync는 Streamlit 기반 대시보드에서 서비스 운영 현황과 AI·API 사용량을 분석합니다. 대시보드는 FastAPI Dashboard API를 통해 데이터를 조회하며, 화면별 조회 기간과 필터를 적용해 필요한 운영 지표를 확인할 수 있습니다.
 
 - **대시보드 홈**
   - 선택한 기간의 사용자 수와 AI 호출 수를 확인합니다.
-  - 일별 AI 사용량, 최근 AI 활동, provider별 호출 비중을 제공합니다.
+  - 일별 AI 사용량 차트와 최근 AI 활동 내역을 제공합니다.
+  - 하단 운영 메모에서 현재 기간의 제공자별 호출 비중을 확인합니다.
 
-- **AI 사용량 분석**
-  - 모델·사용자별 호출 수와 총·입력·출력 토큰을 확인합니다.
-  - 평균·P95 응답시간, 오류율, 일별 토큰 추이와 상세 요청 내역을 분석합니다.
+- **AI 사용량**
+  - 모델·사용자 필터를 적용해 총 요청 수와 총·입력·출력 토큰을 확인합니다.
+  - 평균 응답시간, 오류율, P95 응답시간을 제공합니다.
+  - 제공자별 호출량과 일별 토큰 추이를 차트로 확인합니다.
+  - 사용량 요약, 제공자·모델별 집계, 사용자별 상세 요청 내역을 제공합니다.
 
-- **API 호출 분석**
-  - 엔드포인트·사용자별 요청 수, 성공률, 평균 응답시간을 확인합니다.
-  - 오류 요청, 최근 상태 코드와 429 rate limit 경고를 확인할 수 있습니다.
+- **API 호출**
+  - 엔드포인트·사용자 필터를 적용해 API 요청 수를 확인합니다.
+  - 성공률, 평균 응답시간, 오류 요청 수를 제공합니다.
+  - 엔드포인트별 호출량과 집계 결과를 확인합니다.
+  - 최근 API 호출 내역과 최신 상태 코드를 제공합니다.
+  - 429 응답이 발생한 경우 Rate Limit 안내를 표시합니다.
 
-- **학습 데이터 및 운영 지표**
-  - 사용자 활동, 저장 단어, Tutor 대화·피드백 등 서비스 데이터를 운영 관점에서 확인합니다.
-  - 화면별 조회 기간과 필터를 적용하여 필요한 지표를 선별할 수 있습니다.
+- **공통 조회 기능**
+  - 각 화면에서 조회 기간을 선택할 수 있습니다.
+  - 데이터 연결 상태, API 상태와 마지막 스냅샷 시각을 확인할 수 있습니다.
 
 [📊 Dashboard 바로가기](https://subsync-dashboard-5xicocfzxxf2lngqm4mj7s.streamlit.app)
 
@@ -366,7 +372,7 @@ SubSync는 Streamlit 기반 대시보드를 통해 서비스 운영 현황과 �
        ▼
 ┌────────────────────┐
 │ Streamlit Dashboard │
-│ User/Word/Tutor/LLM/API Analytics │
+│ User/AI/API Analytics │
 └────────────────────┘
 ```
 
@@ -403,7 +409,7 @@ GET https://subsync-backend-4bmh.onrender.com/api/v1/dictionary/hover?word=hones
 
 > `/health`는 프로세스 상태만 확인하므로, 외부 사전·번역·LLM Provider의 정상 여부까지 보장하지는 않습니다.
 
-Frontend는 Streamlit cloud / Chrome Web store에 배포되어 있습니다.
+Dashboard는 Streamlit Cloud, Frontend는 Chrome Web Store에 배포되어 있습니다.
 
 
 - [Dashboard (Streamlit)](https://subsync-dashboard-5xicocfzxxf2lngqm4mj7s.streamlit.app)
