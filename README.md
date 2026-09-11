@@ -134,6 +134,7 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
   - 관련 표현과 추가 학습 정보를 확인할 수 있습니다.
 
 
+
 ### 저장소 탭
 
 학습 중 발견한 단어를 저장하고, 저장한 단어와 학습 이력을 관리합니다.
@@ -156,6 +157,8 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
   - 저장한 단어와 반복 학습 기록을 계정 기반으로 관리합니다.
   - Google 로그인 후 여러 환경에서 학습 기록을 이어서 확인할 수 있습니다.
 
+
+5 gif
 ### Google 로그인
 
 Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에 연결합니다.
@@ -173,6 +176,8 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 - **학습 기록 동기화**
   - 저장한 단어와 시청 기록을 계정에 연결합니다.
   - 다른 환경에서도 동일한 학습 기록을 확인할 수 있습니다.
+
+
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/4.gif" alt="SubSync 4번 기능 시연" width="740" />
