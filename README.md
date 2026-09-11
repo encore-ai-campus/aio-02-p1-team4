@@ -217,6 +217,7 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
 <p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/7.gif" alt="SubSync 7번 기능 시연" width="740" />
 </p>
+
 ### 설정 탭
 
 학습 방식과 화면 환경에 맞춰 SubSync의 동작과 UI를 개인화합니다.
@@ -279,6 +280,7 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 ---
 
 ## 📊 대시보드
+<img width="1114" height="851" alt="스크린샷 2026-09-10 223444" src="https://github.com/user-attachments/assets/3939fc96-7a75-4f9e-8408-dad6181dd649" />
 
 SubSync는 Streamlit 기반 대시보드에서 서비스 운영 현황과 AI·API 사용량을 분석합니다. 대시보드는 FastAPI Dashboard API를 통해 데이터를 조회하며, 화면별 조회 기간과 필터를 적용해 필요한 운영 지표를 확인할 수 있습니다.
 
