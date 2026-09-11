@@ -127,19 +127,18 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
   - 기본 정의와 현재 문맥에서의 의미를 제공합니다.
   - 관련 표현과 추가 학습 정보를 확인할 수 있습니다.
 
-### 저장소 탭
-
-학습 중 발견한 단어를 저장하고, 저장한 단어와 학습 이력을 관리합니다.
 
 <hr />
-
-![저장소 탭 미리보기](./docs/gifs/storage-tab.gif)
 
 <br />
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/6.gif" alt="SubSync 저장소 탭 추가 시연" width="740" />
 </p>
+
+### 저장소 탭
+
+학습 중 발견한 단어를 저장하고, 저장한 단어와 학습 이력을 관리합니다.
 
 - **단어 저장**
   - 자막, Script, 단어 상세 화면에서 학습한 단어를 저장합니다.
