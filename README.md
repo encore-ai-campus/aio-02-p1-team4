@@ -28,8 +28,7 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 ---
 
 ## ✨ 프로젝트 소개
-<img width="640" height="360" alt="thumb" src="https://github.com/user-attachments/assets/01cf4164-073b-48e1-81c1-5ca59bd3dfc7" />
-
+1.gif
 
 
 
