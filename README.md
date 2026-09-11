@@ -30,7 +30,7 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 ## ✨ 프로젝트 소개
 
 <p align="center">
-  <img src="./1.gif" alt="SubSync 1번 GIF" width="740" />
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/1.gif" alt="SubSync 1번 GIF" width="740" />
 </p>
 
 
@@ -78,7 +78,7 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 ## 🌟 주요 기능
 
 <p align="center">
-  <img src="./2.gif" alt="SubSync 인터랙티브 UI" width="740" />
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/2.gif" alt="SubSync 인터랙티브 UI" width="740" />
 </p>
 
 ### 인터랙티브 UI
@@ -105,7 +105,7 @@ YouTube → 영·한 이중자막 → 단어 Hover/Click → 단어 저장 → V
 
 
 <p align="center">
-  <img src="./3.gif" alt="SubSync 영상 학습 UI" width="740" />
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/3.gif" alt="SubSync 영상 학습 UI" width="740" />
 </p>
 
 ### 영상 학습 탭
