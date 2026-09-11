@@ -20,10 +20,12 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 3. [주요 기능](#-주요-기능)
 4. [AI Video Tutor](#-ai-video-tutor)
 5. [서비스 이용 흐름](#-서비스-이용-흐름)
-6. [기술 스택](#-기술-스택)
-7. [시스템 아키텍처](#-시스템-아키텍처)
-8. [프로젝트 구성](#-프로젝트-구성)
-9. [관련 문서](#-관련-문서)
+6. [대시보드](#-대시보드)
+7. [기술 스택](#-기술-스택)
+8. [시스템 아키텍처](#-시스템-아키텍처)
+9. [프로젝트 구성](#-프로젝트-구성)
+10. [배포 확인](#-배포-확인)
+11. [관련 문서](#-관련-문서)
 
 ---
 
@@ -271,16 +273,27 @@ SubSync의 핵심 AI 학습 기능입니다. 일반적인 챗봇이 아니라 **
 
 ---
 
-## 🎥 이미지
+## 📊 대시보드
 
+SubSync는 Streamlit 기반 대시보드를 통해 서비스 운영 현황과 학습 데이터를 분석합니다. 대시보드는 FastAPI Dashboard API를 통해 데이터를 조회하며, 사용자 활동과 AI Tutor·API 사용 현황을 한눈에 확인할 수 있습니다.
 
-| Login | Dual Subtitle | Word Hover & Click |
-|---|---|---|
-| <img width="660" height="395" alt="스크린샷 2026-09-10 222935" src="https://github.com/user-attachments/assets/91945885-4dd2-4794-b04e-cb8fd5740da6" /> | <img width="972" height="245" alt="스크린샷 2026-09-10 222816" src="https://github.com/user-attachments/assets/d8197261-6471-40b9-97e7-a02f8ff9e60b" /> | <img width="446" height="359" alt="스크린샷 2026-09-10 222858" src="https://github.com/user-attachments/assets/dacd7ecd-4f5a-45e8-8dd2-f1a3622b4cce" /> |
+- **대시보드 홈**
+  - 선택한 기간의 사용자 수와 AI 호출 수를 확인합니다.
+  - 일별 AI 사용량, 최근 AI 활동, provider별 호출 비중을 제공합니다.
 
-| Script | Video Tutor | Dashboard |
-|---|---|---|
-| <img width="516" height="610" alt="스크린샷 2026-09-10 223024" src="https://github.com/user-attachments/assets/0856d804-7e06-4d5d-9f1f-7530bd178fd3" /> | <img width="505" height="646" alt="스크린샷 2026-09-10 223142" src="https://github.com/user-attachments/assets/f83d73af-2640-4536-83e8-95a97b692013" /> | <img width="1114" height="851" alt="image" src="https://github.com/user-attachments/assets/db24019b-dd33-4aa3-8e35-866f857091be" />  |
+- **AI 사용량 분석**
+  - 모델·사용자별 호출 수와 총·입력·출력 토큰을 확인합니다.
+  - 평균·P95 응답시간, 오류율, 일별 토큰 추이와 상세 요청 내역을 분석합니다.
+
+- **API 호출 분석**
+  - 엔드포인트·사용자별 요청 수, 성공률, 평균 응답시간을 확인합니다.
+  - 오류 요청, 최근 상태 코드와 429 rate limit 경고를 확인할 수 있습니다.
+
+- **학습 데이터 및 운영 지표**
+  - 사용자 활동, 저장 단어, Tutor 대화·피드백 등 서비스 데이터를 운영 관점에서 확인합니다.
+  - 화면별 조회 기간과 필터를 적용하여 필요한 지표를 선별할 수 있습니다.
+
+[📊 Dashboard 바로가기](https://subsync-dashboard-5xicocfzxxf2lngqm4mj7s.streamlit.app)
 
 ---
 
