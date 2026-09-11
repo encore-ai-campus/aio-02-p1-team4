@@ -212,6 +212,9 @@ Supabase Auth 기반 Google OAuth 로그인을 통해 학습 기록을 계정에
   - 
 <hr />
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teach97/subsync-assets/main/7.gif" alt="SubSync 7번 기능 시연" width="740" />
+</p>
 ### 설정 탭
 
 학습 방식과 화면 환경에 맞춰 SubSync의 동작과 UI를 개인화합니다.
