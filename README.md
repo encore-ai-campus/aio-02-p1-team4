@@ -18,14 +18,15 @@ YouTube 영·한 이중자막과 AI Video Tutor를 결합한 Chrome Extension �
 1. [프로젝트 소개](#-프로젝트-소개)
 2. [기획 배경](#-기획-배경)
 3. [주요 기능](#-주요-기능)
-4. [AI Video Tutor](#-ai-tutor)
-5. [서비스 이용 흐름](#-서비스-이용-흐름)
-6. [대시보드](#-대시보드)
-7. [기술 스택](#-기술-스택)
-8. [시스템 아키텍처](#-시스템-아키텍처)
-9. [프로젝트 구성](#-프로젝트-구성)
-10. [배포 확인](#️-배포-확인)
-11. [관련 문서](#-관련-문서)
+4. [팀원](#-팀원)
+5. [AI Video Tutor](#-ai-tutor)
+6. [서비스 이용 흐름](#-서비스-이용-흐름)
+7. [대시보드](#-대시보드)
+8. [기술 스택](#-기술-스택)
+9. [시스템 아키텍처](#-시스템-아키텍처)
+10. [프로젝트 구성](#-프로젝트-구성)
+11. [배포 확인](#️-배포-확인)
+12. [관련 문서](#-관련-문서)
 
 ---
 
@@ -49,6 +50,18 @@ SubSync는 크게 세 개의 시스템으로 구성됩니다.
 | **Chrome Extension** | 이중자막, Script, 단어 학습, Video Tutor, 로그인, 학습 설정을 제공하는 사용자 화면 |
 | **FastAPI Backend** | 인증, 단어 조회/저장, Tutor AI 호출, 학습 데이터 저장, 로그 수집, LLM 사용량 관리를 담당하는 REST API |
 | **Streamlit Dashboard** | 사용자·AI·API 사용량과 운영 상태를 분석하는 내부 운영 화면 |
+
+---
+
+## 👥 팀원
+
+| 이름 | 담당 영역 | GitHub |
+|---|---|---|
+| 노지훈 | PM | [열기 ↗](https://github.com/931njhthe-star) |
+| 김훈 | Frontend | [열기 ↗](https://github.com/teach97) |
+| 전소예 | Dashboard | [열기 ↗](https://github.com/soyedev) |
+| 박서윤 | Backend | [열기 ↗](https://github.com/seoyun-park) |
+| 최경락 | AI | [열기 ↗](https://github.com/Kyeongrak-Choi) |
 
 ---
 
